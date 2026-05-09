@@ -8,51 +8,40 @@
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --red:#C0392B; --red-light:#FDECEA; --red-mid:#F5C6C2;
-  --amber:#D68910; --amber-light:#FEF9E7; --amber-mid:#FAD7A0;
-  --green:#1E8449; --green-light:#E9F7EF; --green-mid:#A9DFBF;
-  --blue:#1A6FA8; --blue-light:#EBF5FB; --blue-mid:#AED6F1;
-  --purple:#6C3483; --purple-light:#F5EEF8; --purple-mid:#D2B4DE;
-  --teal:#148F77; --teal-light:#E8F8F5;
-  --bg:#F4F6F8; --surface:#FFFFFF; --surface2:#F8F9FA;
-  --border:#DEE2E6; --border-dark:#BDC3C7;
-  --text:#1A1A2E; --text-mid:#4A4A6A; --text-muted:#7F8C8D;
-  --mono:'IBM Plex Mono',monospace; --sans:'Sarabun',sans-serif;
-  --r-sm:8px; --r-md:12px; --r-lg:16px;
-  --sh-sm:0 1px 4px rgba(0,0,0,0.08); --sh-md:0 4px 16px rgba(0,0,0,0.10);
+  --red:#C0392B;--red-light:#FDECEA;--red-mid:#F5C6C2;
+  --amber:#D68910;--amber-light:#FEF9E7;--amber-mid:#FAD7A0;
+  --green:#1E8449;--green-light:#E9F7EF;--green-mid:#A9DFBF;
+  --blue:#1A6FA8;--blue-light:#EBF5FB;--blue-mid:#AED6F1;
+  --purple:#6C3483;--purple-light:#F5EEF8;--purple-mid:#D2B4DE;
+  --teal:#148F77;--teal-light:#E8F8F5;
+  --orange:#BA4A00;--orange-light:#FEF0E7;--orange-mid:#F5CBA7;
+  --bg:#F4F6F8;--surface:#FFFFFF;--surface2:#F8F9FA;
+  --border:#DEE2E6;--border-dark:#BDC3C7;
+  --text:#1A1A2E;--text-mid:#4A4A6A;--text-muted:#7F8C8D;
+  --mono:'IBM Plex Mono',monospace;--sans:'Sarabun',sans-serif;
+  --r-sm:8px;--r-md:12px;--r-lg:16px;
+  --sh-sm:0 1px 4px rgba(0,0,0,0.08);--sh-md:0 4px 16px rgba(0,0,0,0.10);
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:100vh;font-size:16px;line-height:1.6}
-
-/* BOTTOM NAV */
 .bnav{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1.5px solid var(--border);display:flex;z-index:100;box-shadow:0 -4px 16px rgba(0,0,0,0.08)}
 .nbtn{flex:1;padding:10px 4px 14px;border:none;background:transparent;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;font-family:var(--sans);font-size:11px;font-weight:700;color:var(--text-muted);letter-spacing:0.02em;transition:color 0.15s}
-.nbtn.active{color:var(--red)}
-.nbtn.active .ni{background:var(--red-light)}
+.nbtn.active{color:var(--red)}.nbtn.active .ni{background:var(--red-light)}
 .ni{width:42px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background 0.15s}
-
-/* PAGES */
 .page{display:none;padding:1rem 1rem 5.5rem;max-width:640px;margin:0 auto}
 .page.active{display:block}
-
-/* HEADER */
 .aheader{display:flex;align-items:center;justify-content:space-between;padding:14px 1rem 10px;background:var(--surface);border-bottom:1.5px solid var(--border);position:sticky;top:0;z-index:50;box-shadow:var(--sh-sm)}
 .lrow{display:flex;align-items:center;gap:10px}
 .lpill{background:var(--red);color:#fff;font-family:var(--mono);font-size:13px;font-weight:600;padding:4px 10px;border-radius:20px}
-.ltitle{font-size:15px;font-weight:700;color:var(--text)}
-.lsub{font-size:12px;color:var(--text-muted);font-weight:500}
+.ltitle{font-size:15px;font-weight:700;color:var(--text)}.lsub{font-size:12px;color:var(--text-muted);font-weight:500}
 .hbadge{background:var(--red-light);color:var(--red);font-family:var(--mono);font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;border:1px solid var(--red-mid)}
-
-/* SECTION TITLE */
 .stitle{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin:1.25rem 0 0.75rem;display:flex;align-items:center;gap:8px}
 .stitle::after{content:'';flex:1;height:1.5px;background:var(--border)}
-
-/* SCENE CARD */
+/* SCENE */
 .scene-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin-bottom:1rem;box-shadow:var(--sh-sm)}
 .scene-top{background:linear-gradient(135deg,#C0392B 0%,#922B21 100%);padding:1rem 1.25rem;color:#fff}
 .scene-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:3px 10px;font-size:12px;font-weight:700;margin-bottom:8px}
-.scene-name{font-size:18px;font-weight:700;margin-bottom:4px}
-.scene-sub{font-size:13px;opacity:.85}
+.scene-name{font-size:18px;font-weight:700;margin-bottom:4px}.scene-sub{font-size:13px;opacity:.85}
 .tags-row{display:flex;flex-wrap:wrap;gap:6px;padding:.875rem 1.25rem;border-bottom:1px solid var(--border)}
 .tag{font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;display:inline-flex;align-items:center;gap:4px}
 .tag-r{background:var(--red-light);color:var(--red);border:1px solid var(--red-mid)}
@@ -64,30 +53,28 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .vital:not(:last-child){border-right:1px solid var(--border)}
 .vl{font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:4px}
 .vv{font-family:var(--mono);font-size:16px;font-weight:700}
-.vd{color:var(--red)} .vw{color:var(--amber)} .vo{color:var(--green)}
-
-/* HOME HERO */
+.vd{color:var(--red)}.vw{color:var(--amber)}.vo{color:var(--green)}
+/* HOME */
 .hhero{background:linear-gradient(135deg,#C0392B 0%,#922B21 100%);border-radius:var(--r-lg);padding:2rem 1.5rem;color:#fff;text-align:center;margin-bottom:1rem}
 .hhero-icon{font-size:48px;margin-bottom:10px}
 .hhero-title{font-size:24px;font-weight:700;margin-bottom:6px}
 .hhero-sub{font-size:15px;opacity:.9;line-height:1.6}
-.hstart{width:100%;padding:16px;background:#fff;color:var(--red);border:none;border-radius:var(--r-md);font-family:var(--sans);font-size:17px;font-weight:700;cursor:pointer;margin-top:1.25rem;box-shadow:0 4px 12px rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;gap:8px;transition:transform 0.1s,box-shadow 0.1s}
-.hstart:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,0.2)}
+.hstart{width:100%;padding:16px;background:#fff;color:var(--red);border:none;border-radius:var(--r-md);font-family:var(--sans);font-size:17px;font-weight:700;cursor:pointer;margin-top:1.25rem;box-shadow:0 4px 12px rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;gap:8px;transition:transform 0.1s}
+.hstart:hover{transform:translateY(-1px)}
+/* FACT-CHECK badge */
+.fc-badge{display:inline-flex;align-items:center;gap:5px;background:var(--green-light);color:var(--green);border:1px solid var(--green-mid);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700;margin-bottom:6px}
 .poverview{display:flex;flex-direction:column;gap:10px;margin-bottom:1rem}
 .pcard{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-md);padding:1rem 1.25rem;display:flex;align-items:center;gap:14px;box-shadow:var(--sh-sm)}
 .pcard-icon{font-size:28px;flex-shrink:0}
-.pcard-title{font-size:16px;font-weight:700;color:var(--text)}
-.pcard-sub{font-size:13px;color:var(--text-muted)}
+.pcard-title{font-size:16px;font-weight:700;color:var(--text)}.pcard-sub{font-size:13px;color:var(--text-muted)}
 .pcard-count{margin-left:auto;font-family:var(--mono);font-size:13px;font-weight:700;padding:4px 10px;border-radius:20px;flex-shrink:0}
 .cc-p{background:var(--red-light);color:var(--red);border:1px solid var(--red-mid)}
 .cc-s{background:var(--blue-light);color:var(--blue);border:1px solid var(--blue-mid)}
 .cc-d{background:var(--purple-light);color:var(--purple);border:1px solid var(--purple-mid)}
-
-/* QUIZ: PROGRESS */
+/* QUIZ PROGRESS */
 .prog-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-md);padding:1rem 1.25rem;margin-bottom:1rem;box-shadow:var(--sh-sm)}
 .pt{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-.pl{font-size:14px;font-weight:700;color:var(--text)}
-.pp{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--red)}
+.pl{font-size:14px;font-weight:700;color:var(--text)}.pp{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--red)}
 .ptrack{height:8px;background:var(--border);border-radius:4px;overflow:hidden}
 .pfill{height:100%;border-radius:4px;transition:width 0.5s ease}
 .pfill.primary{background:linear-gradient(90deg,#C0392B,#E74C3C)}
@@ -100,9 +87,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .sbv{font-family:var(--mono);font-size:18px;font-weight:700;color:var(--text)}
 .pips{display:flex;gap:3px;margin-top:10px}
 .pip{flex:1;height:4px;border-radius:2px;background:var(--border);min-width:12px;transition:background 0.3s}
-.pip.done{background:var(--green)}
-.pip.ap{background:var(--red)}.pip.as{background:var(--blue)}.pip.ad{background:var(--purple)}
-
+.pip.done{background:var(--green)}.pip.ap{background:var(--red)}.pip.as{background:var(--blue)}.pip.ad{background:var(--purple)}
 /* PHASE BANNER */
 .pbanner{border-radius:var(--r-md);padding:12px 16px;margin-bottom:1rem;display:flex;align-items:center;gap:12px;border:1.5px solid}
 .pbanner.primary{background:var(--red-light);border-color:var(--red-mid)}
@@ -114,8 +99,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .pbanner.secondary .pb-title{color:var(--blue)}
 .pbanner.definitive .pb-title{color:var(--purple)}
 .pb-desc{font-size:13px;color:var(--text-mid);margin-top:1px}
-
-/* QUESTION CARD */
+/* QUESTION */
 .qcard{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-sm);animation:su 0.25s ease}
 @keyframes su{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .qhdr{padding:1rem 1.25rem;border-bottom:1.5px solid var(--border);display:flex;align-items:flex-start;gap:12px;background:var(--surface2)}
@@ -162,41 +146,39 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .btn-d{background:var(--blue-light);border-color:var(--blue-mid);color:var(--blue);display:none}
 .btn-n{background:var(--red);border-color:var(--red);color:#fff;display:none}
 .btn-n:hover{filter:brightness(0.9)}
-
-/* CONTENT PAGE */
+/* CONTENT */
 .ctabs{display:flex;gap:0;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-md);overflow:hidden;margin-bottom:1rem;box-shadow:var(--sh-sm)}
 .ctab{flex:1;padding:11px 6px;border:none;background:transparent;font-family:var(--sans);font-size:13px;font-weight:700;color:var(--text-muted);cursor:pointer;transition:all 0.15s;border-right:1px solid var(--border);line-height:1.3}
 .ctab:last-child{border-right:none}
 .ctab.active.primary{background:var(--red-light);color:var(--red)}
 .ctab.active.secondary{background:var(--blue-light);color:var(--blue)}
 .ctab.active.definitive{background:var(--purple-light);color:var(--purple)}
-.csec{display:none}
-.csec.active{display:block}
+.ctab.active.penetrating{background:var(--orange-light);color:var(--orange)}
+.csec{display:none}.csec.active{display:block}
 .accordion{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-md);overflow:hidden;margin-bottom:10px;box-shadow:var(--sh-sm)}
 .achdr{display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer;transition:background 0.15s;background:var(--surface);user-select:none}
 .achdr:hover{background:var(--surface2)}
-.aicon{font-size:22px;flex-shrink:0}
-.alabel{flex:1}
-.atitle{font-size:16px;font-weight:700;color:var(--text)}
-.asub{font-size:13px;color:var(--text-muted);margin-top:1px}
+.aicon{font-size:22px;flex-shrink:0}.alabel{flex:1}
+.atitle{font-size:16px;font-weight:700;color:var(--text)}.asub{font-size:13px;color:var(--text-muted);margin-top:1px}
 .abadge{font-family:var(--mono);font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px;flex-shrink:0}
 .bp{background:var(--red-light);color:var(--red);border:1px solid var(--red-mid)}
 .bs{background:var(--blue-light);color:var(--blue);border:1px solid var(--blue-mid)}
 .bd{background:var(--purple-light);color:var(--purple);border:1px solid var(--purple-mid)}
+.bpen{background:var(--orange-light);color:var(--orange);border:1px solid var(--orange-mid)}
 .achev{font-size:12px;color:var(--text-muted);flex-shrink:0;transition:transform 0.2s}
 .accordion.open .achev{transform:rotate(180deg)}
 .abody{display:none;padding:0 1rem 1rem;border-top:1.5px solid var(--border)}
 .accordion.open .abody{display:block}
-
-/* DETAIL COMPONENTS */
+/* DETAIL */
 .dsec{margin-top:1rem}
 .dst{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid;display:flex;align-items:center;gap:6px}
-.cr{color:var(--red);border-color:var(--red-mid)}
-.cb{color:var(--blue);border-color:var(--blue-mid)}
-.cg{color:var(--green);border-color:var(--green-mid)}
-.ca{color:var(--amber);border-color:var(--amber-mid)}
-.cp{color:var(--purple);border-color:var(--purple-mid)}
-.ct{color:var(--teal);border-color:#A2D9CE}
+.cr{color:var(--red);border-color:var(--red-mid)}.cb{color:var(--blue);border-color:var(--blue-mid)}
+.cg{color:var(--green);border-color:var(--green-mid)}.ca{color:var(--amber);border-color:var(--amber-mid)}
+.cp{color:var(--purple);border-color:var(--purple-mid)}.ct{color:var(--teal);border-color:#A2D9CE}
+.co{color:var(--orange);border-color:var(--orange-mid)}
+/* CORRECTED badge inline */
+.fix-badge{display:inline-block;background:#FEF9E7;color:#7D6608;border:1px solid #FAD7A0;border-radius:6px;font-size:11px;font-weight:700;padding:1px 7px;margin-left:6px;vertical-align:middle}
+.new-badge{display:inline-block;background:var(--green-light);color:var(--green);border:1px solid var(--green-mid);border-radius:6px;font-size:11px;font-weight:700;padding:1px 7px;margin-left:6px;vertical-align:middle}
 .dlist{list-style:none;display:flex;flex-direction:column;gap:8px}
 .dlist li{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 14px;font-size:15px;line-height:1.7;color:var(--text-mid);display:flex;gap:10px;border-left:3px solid var(--border-dark)}
 .dlist li .blt{flex-shrink:0;font-size:17px}
@@ -204,22 +186,19 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .dgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .dgi{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 12px}
 .dgl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:4px}
-.dgv{font-size:14px;line-height:1.6;color:var(--text-mid)}
-.dgv strong{color:var(--text);font-weight:700}
+.dgv{font-size:14px;line-height:1.6;color:var(--text-mid)}.dgv strong{color:var(--text);font-weight:700}
 .dtw{overflow-x:auto;margin-top:2px}
 .dtbl{width:100%;border-collapse:collapse;font-size:13px;min-width:380px}
 .dtbl th{background:var(--surface2);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);padding:8px 10px;text-align:left;border-bottom:2px solid var(--border)}
 .dtbl td{padding:9px 10px;color:var(--text-mid);border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6;font-size:13px}
 .dtbl td:first-child{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--teal)}
-.dtbl tr:last-child td{border-bottom:none}
-.dtbl tr:hover td{background:var(--surface2)}
-
+.dtbl tr:last-child td{border-bottom:none}.dtbl tr:hover td{background:var(--surface2)}
+.alert-info{background:var(--blue-light);border:1.5px solid var(--blue-mid);border-radius:var(--r-sm);padding:10px 14px;font-size:13px;line-height:1.65;color:var(--blue);margin-bottom:8px}
+.alert-warn{background:var(--amber-light);border:1.5px solid var(--amber-mid);border-radius:var(--r-sm);padding:10px 14px;font-size:13px;line-height:1.65;color:var(--amber);margin-bottom:8px}
 /* DONE */
 .donecard{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md)}
 .donetop{background:linear-gradient(135deg,#1E8449 0%,#148F77 100%);padding:2rem 1.5rem;text-align:center;color:#fff}
-.doneicon{font-size:48px;margin-bottom:8px}
-.donegrade{font-size:22px;font-weight:700;margin-bottom:4px}
-.donesub{font-size:14px;opacity:.9}
+.doneicon{font-size:48px;margin-bottom:8px}.donegrade{font-size:22px;font-weight:700;margin-bottom:4px}.donesub{font-size:14px;opacity:.9}
 .donebody{padding:1.25rem}
 .donestats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.25rem}
 .donestat{background:var(--surface2);border:1.5px solid var(--border);border-radius:var(--r-sm);padding:14px 8px;text-align:center}
@@ -237,12 +216,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .dbtn{flex:1;padding:14px;border-radius:var(--r-md);font-family:var(--sans);font-size:15px;font-weight:700;cursor:pointer;border:2px solid;transition:all 0.15s}
 .dbtn.restart{background:var(--red-light);border-color:var(--red-mid);color:var(--red)}
 .dbtn.ref{background:var(--blue-light);border-color:var(--blue-mid);color:var(--blue)}
-
-@media(max-width:400px){
-  .vgrid{grid-template-columns:repeat(2,1fr)}
-  .dgrid{grid-template-columns:1fr}
-  .srow{grid-template-columns:repeat(2,1fr)}
-}
+@media(max-width:400px){.vgrid{grid-template-columns:repeat(2,1fr)}.dgrid{grid-template-columns:1fr}.srow{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -250,9 +224,9 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 <div class="aheader">
   <div class="lrow">
     <div class="lpill">ATLS 11</div>
-    <div><div class="ltitle">Trauma Sim</div><div class="lsub">xABCDE Protocol 2025</div></div>
+    <div><div class="ltitle">Trauma Sim</div><div class="lsub">Fact-checked · 2025</div></div>
   </div>
-  <div class="hbadge">Level I</div>
+  <div class="hbadge">✓ verified</div>
 </div>
 
 <!-- HOME -->
@@ -260,15 +234,28 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
   <div class="hhero">
     <div class="hhero-icon">🚑</div>
     <div class="hhero-title">ATLS 11 Trauma Sim</div>
-    <div class="hhero-sub">ฝึกประเมินและรักษาผู้ป่วย Trauma ตามหลัก xABCDE Protocol ของ ATLS ฉบับที่ 11</div>
-    <button class="hstart" onclick="goQuiz()">▶ เริ่มข้อสอบเลย &nbsp;(14 ข้อ)</button>
+    <div class="hhero-sub">ฝึกประเมินและรักษาผู้ป่วย Trauma ตามหลัก xABCDE Protocol ของ ATLS ฉบับที่ 11 (2025) — เนื้อหา fact-checked แล้ว</div>
+    <button class="hstart" onclick="goQuiz()">▶ เริ่มข้อสอบเลย (14 ข้อ)</button>
   </div>
+
+  <div class="stitle">Key Changes ใน ATLS 11 (2025)</div>
+  <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-md);padding:1rem 1.25rem;margin-bottom:1rem;box-shadow:var(--sh-sm)">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text-mid)"><span style="flex-shrink:0;font-size:18px">🆕</span><span><strong style="color:var(--text)">xABCDE:</strong> Hemorrhage control ก่อน Airway — codified เป็น step แรก</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text-mid)"><span style="flex-shrink:0;font-size:18px">🩸</span><span><strong style="color:var(--text)">DCR:</strong> Blood products first — ลด crystalloid ให้น้อยที่สุด ใช้เป็น bridging เท่านั้นขณะรอ blood products (ไม่ใช่ first-line อีกต่อไป)</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text-mid)"><span style="flex-shrink:0;font-size:18px">🦴</span><span><strong style="color:var(--text)">Spine:</strong> Selective Motion Restriction (SMR) — ไม่ใช่ routine collar; Airway comes first</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text-mid)"><span style="flex-shrink:0;font-size:18px">🔫</span><span><strong style="color:var(--text)">Penetrating Trauma:</strong> บทใหม่แยกต่างหาก (ดูในเมนูเนื้อหา)</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text-mid)"><span style="flex-shrink:0;font-size:18px">👥</span><span><strong style="color:var(--text)">Team communication:</strong> Closed-loop, role clarity, standardized flexibility</span></div>
+    </div>
+  </div>
+
   <div class="stitle">3 Phase ในการดูแล</div>
   <div class="poverview">
     <div class="pcard"><div class="pcard-icon">🔴</div><div><div class="pcard-title">Primary Survey</div><div class="pcard-sub">xABCDE — ประเมิน life threat ทันที</div></div><div class="pcard-count cc-p">7 ข้อ</div></div>
     <div class="pcard"><div class="pcard-icon">🔵</div><div><div class="pcard-title">Secondary Survey</div><div class="pcard-sub">AMPLE + Head-to-Toe ครบทั้งร่างกาย</div></div><div class="pcard-count cc-s">4 ข้อ</div></div>
     <div class="pcard"><div class="pcard-icon">🟣</div><div><div class="pcard-title">Definitive Management</div><div class="pcard-sub">Surgery + ICU — รักษา definitive</div></div><div class="pcard-count cc-d">3 ข้อ</div></div>
   </div>
+
   <div class="stitle">สถานการณ์ผู้ป่วย</div>
   <div class="scene-card">
     <div class="scene-top">
@@ -316,10 +303,12 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
     <button class="ctab active primary" onclick="switchContent('primary',this)">🔴 Primary</button>
     <button class="ctab secondary" onclick="switchContent('secondary',this)">🔵 Secondary</button>
     <button class="ctab definitive" onclick="switchContent('definitive',this)">🟣 Definitive</button>
+    <button class="ctab penetrating" onclick="switchContent('penetrating',this)">🔫 Penetrating</button>
   </div>
   <div class="csec active" id="cs-primary"><div id="acc-primary"></div></div>
   <div class="csec" id="cs-secondary"><div id="acc-secondary"></div></div>
   <div class="csec" id="cs-definitive"><div id="acc-definitive"></div></div>
+  <div class="csec" id="cs-penetrating"><div id="acc-penetrating"></div></div>
 </div>
 
 <!-- BOTTOM NAV -->
@@ -330,91 +319,334 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 </div>
 
 <script>
-/* DATA */
+/* ═══════════════════════ QUIZ STEPS ═══════════════════════ */
 const steps=[
-  {id:'x',phase:'primary',label:'x — Exsanguinating Hemorrhage',sub:'ควบคุมเลือดออกรุนแรง ก่อน ABCDE',q:'ผู้ป่วยมีเลือดออกจากขาซ้ายปริมาณมากไม่หยุด ตามหลัก xABCDE ของ ATLS 11 สิ่งแรกที่สุดที่ต้องทำคืออะไร?',choices:['ใส่ท่อช่วยหายใจก่อน เพราะ SpO₂ 91% ต่ำกว่าเกณฑ์','ผูก tourniquet ที่ขาซ้ายทันที หรือกดแผลโดยตรงเพื่อหยุดเลือด','เปิด IV line สองเส้น ให้ normal saline 2 ลิตร rapid','ส่ง X-ray ทรวงอกและเชิงกรานก่อนเริ่มรักษา'],correct:1,feedback:'"x" ใน ATLS 11 = exsanguinating hemorrhage control ต้องหยุดเลือดออกรุนแรงก่อนทุกสิ่ง Tourniquet คือ first-line สำหรับ extremity bleeding ที่ควบคุมไม่ได้'},
-  {id:'a',phase:'primary',label:'A — Airway + C-spine',sub:'ทางเดินหายใจ + ปกป้อง C-spine',q:'หลังผูก tourniquet แล้ว ประเมิน Airway: ผู้ป่วยพูดได้แต่เสียงแหบ มีเลือดและ secretion ในช่องปาก ควรทำอะไรก่อน?',choices:['Intubate ด้วย RSI ทันทีเพราะ GCS 12 ต่ำเกินไป','ให้ oxygen mask เฉยๆ แล้วรอดูอาการ','Suction ปาก ให้ O₂ high-flow ทำ jaw-thrust พร้อม C-spine protection ประเมินต่อเนื่อง','ข้ามไป B ได้เลย เพราะผู้ป่วยยังพูดได้'],correct:2,feedback:'พูดได้ = airway เปิดอยู่ แต่เสียงแหบ + เลือดในปาก = ต้อง monitor ใกล้ชิด ATLS 11 เน้น resuscitate shock ก่อน RSI เพราะ peri-intubation hypotension อันตราย'},
-  {id:'b',phase:'primary',label:'B — Breathing & Ventilation',sub:'Tension Pneumothorax',q:'RR 28/min, SpO₂ 91%, เคาะซ้าย hyper-resonance, breath sounds ซ้ายลดมาก, trachea เบี่ยงขวา — วินิจฉัยและรักษาอย่างไร?',choices:['Open pneumothorax → ปิดด้วย 3-sided occlusive dressing','Tension pneumothorax → needle decompression 2nd ICS MCL ทันที ไม่ต้อง X-ray','Hemothorax → chest drain 5th ICS MAL ซ้าย','Flail chest → intubate และ positive pressure ventilation'],correct:1,feedback:'Tension pneumothorax = hyper-resonance + BS ลด + trachea เบี่ยง = ฉุกเฉิน! ต้อง needle decompression ทันที ไม่รอ X-ray'},
-  {id:'c-dcr',phase:'primary',label:'C — Circulation / DCR',sub:'Damage Control Resuscitation',q:'SpO₂ ขึ้น 97% หลัง decompression แต่ BP ยัง 80/50, HR 130 — ตาม ATLS 11 DCR แนวทางใดถูกที่สุด?',choices:['ให้ normal saline 2L rapid bolus เพื่อ volume resuscitate','เปิด IV 2 เส้นใหญ่ ให้ O-negative blood หรือ pRBC:FFP:PLT 1:1:1 เปิด MTP ยอม SBP ~80-90 mmHg','รอ type and screen ก่อนให้ blood product ทุกครั้ง','เริ่ม dopamine เพื่อดัน BP ก่อนให้ blood'],correct:1,feedback:'ATLS 11 DCR: ลด crystalloid ให้มากที่สุด ให้ blood product เร็ว (1:1:1 หรือ whole blood) Permissive hypotension SBP 80-90 mmHg ใน blunt trauma ที่ยังไม่ได้ OR'},
-  {id:'txa',phase:'primary',label:'C — Tranexamic Acid (TXA)',sub:'ให้ภายใน 3 ชั่วโมงหลังบาดเจ็บ',q:'ผู้ป่วยมี major hemorrhage บาดเจ็บมาได้ 50 นาที ควรให้ TXA อย่างไรตาม ATLS 11?',choices:['ไม่จำเป็นต้องให้ TXA ถ้า tourniquet ใส่แล้วและเปิด MTP แล้ว','TXA 1g IV bolus ใน 10 นาที ตามด้วย 1g infusion ใน 8 ชั่วโมง — ให้ภายใน 3 ชั่วโมงหลังบาดเจ็บ','TXA 2g bolus เสมอในทุกกรณี blunt trauma','รอผล lab ยืนยัน coagulopathy ก่อน'],correct:1,feedback:'TXA 1g bolus + 1g infusion ให้ภายใน 3 ชั่วโมง (ถ้ามี TBI ด้วยให้ 2g bolus) ยิ่งให้เร็วยิ่งลด mortality — CRASH-2 trial'},
-  {id:'d',phase:'primary',label:'D — Disability (Neurology)',sub:'GCS + TBI neuroprotection + Spine',q:'GCS 12 (E3V4M5), pupils 4mm bilateral reactive, glucose 108 — มีสิ่งใดต้องทำใน D ตาม ATLS 11?',choices:['ไม่ต้องทำอะไรเพิ่ม GCS ยังอยู่ในเกณฑ์ดี','Intubate ทันทีเพราะ GCS < 15','ตรวจ lateralizing signs, motor/sensory ทุก limb, C-spine, monitor GCS ต่อเนื่อง, รักษา SpO₂>95% SBP≥110 mmHg','ให้ mannitol 1g/kg ทันทีเพื่อ prophylactic ICP'],correct:2,feedback:'ATLS 11 รวม Head+Spine ใน D: ตรวจ lateralizing signs, C-spine (NEXUS), monitor GCS ซ้ำ TBI neuroprotection = SpO₂>95%, SBP≥110 mmHg, normocapnia'},
-  {id:'e',phase:'primary',label:'E — Exposure & Environment',sub:'ตรวจครบ + ป้องกัน Lethal Triad',q:'Expose ผู้ป่วย Temp 35.8°C สิ่งใดต้องทำทันทีตาม ATLS 11?',choices:['เปิดเสื้อผ้าทั้งหมดไว้เพื่อตรวจง่ายตลอดเวลา','เปิดเสื้อผ้าตรวจทั่วร่างกาย (รวม back ด้วย logroll) จากนั้นคลุมผ้าห่มอุ่นทันที ให้ warm IV fluid','ข้ามไป secondary survey เพราะ primary ครบแล้ว','ถอดเฉพาะส่วนที่บาดเจ็บ ไม่ต้องเปิดหมด'],correct:1,feedback:'Expose ให้ครบ รวม back (logroll) แต่ป้องกัน hypothermia ทันที Lethal Triad: hypothermia + acidosis + coagulopathy = ต้องหยุดทุก element'},
-  {id:'secondary-ample',phase:'secondary',label:'Secondary — AMPLE History',sub:'ซักประวัติก่อน head-to-toe',q:'Primary survey ผ่านแล้ว vital เริ่มคงที่ เริ่ม secondary survey — AMPLE ย่อมาจากอะไร?',choices:['Allergies, Medications, Past illness, Last meal, Events/MOI','Age, Medical history, Physical exam, Labs, ECG','Airway, Mouth, Pain, Level of consciousness, Exposure','Anesthesia, Morphine, Pressure, Labs, Emergency surgery'],correct:0,feedback:'AMPLE: Allergies / Medications (anticoagulant?) / Past illness & Pregnancy / Last meal (aspiration risk) / Events-MOI — ซักก่อน head-to-toe ทุกครั้ง'},
-  {id:'secondary-head',phase:'secondary',label:'Secondary — Head & Neck',sub:'Basilar skull fracture signs',q:'พบ Battle sign retroauricular ทั้งสองข้าง + CSF rhinorrhea จากจมูกซ้าย — แปลผลและทำอะไรต่อ?',choices:['หยอดยา antibiotic เข้าช่องจมูกเพื่อป้องกัน meningitis','Basilar skull fracture — งดใส่ NG tube ทาง nasal, งด nasal intubation, CT head ทันที, ปรึกษา neurosurgery','ปกติหลังอุบัติเหตุ ไม่ต้องทำอะไรเพิ่ม','ทำ lumbar puncture เพื่อวัด opening pressure'],correct:1,feedback:'Battle sign + CSF leak = Basilar skull fracture ห้ามใส่ NG tube ทาง nasal เสี่ยง intracranial entry CT head ทันทีและปรึกษา neurosurgery'},
-  {id:'secondary-abdomen',phase:'secondary',label:'Secondary — Abdomen & Pelvis',sub:'CT vs OR decision',q:'Guarding diffuse, FAST positive RUQ น้ำจำนวนมาก BP 88/60 HR 125 — ควรทำอะไร?',choices:['CT abdomen-pelvis ทันทีเพื่อ characterize injury ก่อนตัดสินใจ','Immediate OR (Damage Control Surgery) เพราะ hemodynamically unstable + FAST positive','ทำ DPL ก่อนตัดสินใจ','รอ serial abdominal exams ทุก 2 ชั่วโมงก่อน'],correct:1,feedback:'Unstable + FAST positive = OR ทันที ไม่ต้อง CT (CT ใช้เวลาและเสี่ยงใน unstable) DPL แทบไม่ใช้แล้วเพราะ FAST แม่นยำกว่า'},
-  {id:'secondary-extremity',phase:'secondary',label:'Secondary — Extremities & MSK',sub:'Vascular injury + Compartment syndrome',q:'ขาขวา mid-shaft femur deformity ปลายขาขาว เย็น CRT>3s ไม่มีชีพจร popliteal — ควรทำอะไร?',choices:['Splint ขาและส่ง X-ray ก่อน','Vascular injury จาก femur fracture — ประเมิน Hard signs, เรียก vascular surgery ฉุกเฉิน, CT angio ถ้า stable หรือ OR ทันทีถ้า unstable','ผูก tourniquet แล้วรอ OR เลย','ให้ heparin IV เพื่อป้องกัน thrombosis'],correct:1,feedback:'Hard signs vascular injury (absent pulse, ischemic limb) + femur fx = ฉุกเฉิน ต้องการ vascular surgery และ OR ภายใน 4–6 ชั่วโมงก่อน limb ตาย'},
-  {id:'def-dcs',phase:'definitive',label:'Definitive — Damage Control Surgery',sub:'3 Phases: OR → ICU → Return',q:'ผู้ป่วยต้องไป OR ด่วน สำหรับ intra-abdominal hemorrhage + femur open fracture หลักการ DCS คืออะไร?',choices:['ซ่อมทุกอย่างให้เสร็จใน OR ครั้งเดียว','Phase 1: Control hemorrhage + contamination → Phase 2: ICU resuscitation → Phase 3: Definitive repair เมื่อ physiology ดี','รักษา fracture ก่อนเสมอเพราะ fat embolism อันตราย','ทำ total body CT ก่อน OR เพื่อ plan ทุก injury'],correct:1,feedback:'DCS Phase 1 = abbreviated surgery (pack+clamp+temp closure) Phase 2 = ICU ฟื้น physiology Phase 3 = return OR ซ่อม definitive เมื่อ temp>36°C pH>7.35'},
-  {id:'def-tbi',phase:'definitive',label:'Definitive — TBI Management',sub:'Surgical indication + ICP control',q:'CT head พบ acute SDH ซ้าย 12mm midline shift 8mm GCS ลด 12→8 pupils ซ้ายขยาย 6mm — ควรทำอะไร?',choices:['รอ repeat CT ใน 6 ชั่วโมง','ให้ mannitol 1g/kg IV แล้วรอดู','Emergency craniotomy ทันที — surgical indication: midline shift>5mm, SDH>10mm, GCS drop>2, unilateral dilated pupil','Decompressive craniectomy ในทุกกรณี severe TBI'],correct:2,feedback:'Acute SDH midline shift>5mm + GCS drop = surgical emergency ต้อง craniotomy ภายใน 4 ชั่วโมง (golden period) เพื่อลด mortality'},
-  {id:'def-icu',phase:'definitive',label:'Definitive — ICU & Tertiary Survey',sub:'Rewarm + แก้ Lethal Triad + Tertiary',q:'ผ่าตัด DCS phase 1 เสร็จ ย้าย Surgical ICU ลำดับสำคัญใน 24 ชั่วโมงแรกคืออะไร?',choices:['ถอดท่อช่วยหายใจทันทีเมื่อ GCS>8 เพื่อลด VAP','Tertiary survey + Rewarm + แก้ coagulopathy + แก้ acidosis + Reassess labs ทุก 4–6h + VTE prophylaxis + Nutrition เร็ว','ทำ MRI ทุก organ ที่บาดเจ็บ','ให้ steroid IV ป้องกัน inflammatory response'],correct:1,feedback:'ICU phase = แก้ Lethal Triad (rewarm/coag/acid) + Tertiary survey ค้นหา missed injury + เริ่ม nutrition ภายใน 24-48h + VTE prophylaxis'}
+  /* ─── PRIMARY ─── */
+  {id:'x',phase:'primary',label:'x — Exsanguinating Hemorrhage',sub:'ควบคุมเลือดออกรุนแรง ก่อน ABCDE',
+   q:'ผู้ป่วยมีเลือดออกจากขาซ้ายปริมาณมากไม่หยุด ตามหลัก xABCDE ของ ATLS 11 สิ่งแรกที่สุดที่ต้องทำคืออะไร?',
+   choices:['ใส่ท่อช่วยหายใจก่อน เพราะ SpO₂ 91% ต่ำกว่าเกณฑ์','ผูก tourniquet ที่ขาซ้ายทันที หรือกดแผลโดยตรงเพื่อหยุดเลือด','เปิด IV line ให้ normal saline 2 ลิตร rapid bolus ก่อน','ส่ง X-ray ทรวงอกและเชิงกรานก่อนเริ่มรักษา'],correct:1,
+   feedback:'"x" ใน ATLS 11 = exsanguinating hemorrhage control ต้องหยุดเลือดออกรุนแรงก่อนทุกสิ่ง รวมถึงก่อน Airway Tourniquet คือ first-line สำหรับ extremity bleeding ที่ควบคุมไม่ได้'},
+
+  {id:'a',phase:'primary',label:'A — Airway + C-spine',sub:'Airway มาก่อน Spine เสมอ (ATLS 11)',
+   q:'หลังผูก tourniquet แล้ว ประเมิน Airway: ผู้ป่วยพูดได้แต่เสียงแหบ มีเลือดและ secretion ในช่องปาก ผู้ป่วยนี้ต้องพิจารณา C-spine — ข้อใดถูกต้องที่สุดตาม ATLS 11?',
+   choices:['Intubate RSI ทันทีเพราะ GCS 12 ต่ำเกินไป','ให้ oxygen mask เฉยๆ รอดูอาการ','Suction ปาก ให้ O₂ high-flow ทำ jaw-thrust พร้อม manual inline stabilization ไม่ delay airway management เพราะ spine concern','ใส่ rigid collar ก่อนแล้วค่อยจัดการ airway'],correct:2,
+   feedback:'ATLS 11: Airway management ต้องไม่ล่าช้าเพราะ C-spine concern ใช้ manual inline stabilization ระหว่างจัดการ airway Selective SMR ไม่ใช่ routine collar ทุกราย'},
+
+  {id:'b',phase:'primary',label:'B — Breathing & Ventilation',sub:'Tension Pneumothorax — Clinical diagnosis',
+   q:'RR 28/min, SpO₂ 91%, เคาะซ้าย hyper-resonance, breath sounds ซ้ายลดมาก, trachea เบี่ยงขวา — วินิจฉัยและรักษาอย่างไร?',
+   choices:['Open pneumothorax → ปิดด้วย 3-sided occlusive dressing','Tension pneumothorax → needle decompression 2nd ICS MCL ทันที ไม่ต้อง X-ray จากนั้นต่อด้วย chest drain','Hemothorax → chest drain 5th ICS MAL ซ้าย','Flail chest → intubate positive pressure ventilation'],correct:1,
+   feedback:'Tension PTX = clinical diagnosis ห้ามรอ X-ray Needle decompression 2nd ICS MCL (primary site) — หลัง decomp ต้องตามด้วย chest drain ที่ 4th–5th ICS MAL (triangle of safety) ทันที'},
+
+  {id:'c-dcr',phase:'primary',label:'C — Circulation / DCR',sub:'ATLS 11: Blood products first — minimize crystalloid (bridging only)',
+   q:'SpO₂ ขึ้น 97% หลัง decompression แต่ BP ยัง 80/50, HR 130 — ตาม ATLS 11 DCR แนวทางใดถูกที่สุด?',
+   choices:['ให้ normal saline 2L rapid bolus ก่อนเพื่อ volume resuscitate ตาม ATLS standard','เปิด IV 2 เส้นใหญ่ ให้ O-negative pRBC หรือ whole blood ทันที เปิด MTP รับ permissive hypotension SBP 80-90 mmHg — ใช้ crystalloid ในปริมาณน้อยที่สุดเป็น bridging เท่านั้น','รอ type and screen ก่อนให้ blood product ทุกครั้ง','เริ่ม vasopressor เพื่อดัน BP ก่อนให้ blood'],correct:1,
+   feedback:'ATLS 11 เปลี่ยนจาก crystalloid-first เป็น blood products first — ใช้ crystalloid ในปริมาณน้อยที่สุด (bridging) ขณะรอ blood products เท่านั้น ไม่ใช่ first-line อีกต่อไป (ATLS 9: 2L / ATLS 10: ≤1L / ATLS 11: minimize) Blood products: whole blood หรือ pRBC:FFP:PLT 1:1:1 Permissive hypotension SBP 80–90 mmHg'},
+
+  {id:'txa',phase:'primary',label:'C — Tranexamic Acid (TXA)',sub:'ให้เร็วที่สุด — ภายใน 3 ชั่วโมง',
+   q:'ผู้ป่วยมี major hemorrhage บาดเจ็บมาได้ 50 นาที ควรให้ TXA อย่างไรตาม ATLS 11?',
+   choices:['ไม่จำเป็นต้องให้ TXA ถ้า tourniquet ใส่แล้วและเปิด MTP แล้ว','TXA 1g IV bolus ใน 10 นาที ตามด้วย 1g infusion ใน 8 ชั่วโมง — ให้ภายใน 3 ชั่วโมงหลังบาดเจ็บ (ถ้ามี TBI ร่วมด้วยให้ 2g bolus)','TXA 2g bolus เสมอในทุกกรณี blunt trauma','รอผล lab ยืนยัน coagulopathy ก่อนให้'],correct:1,
+   feedback:'TXA 1g bolus + 1g infusion ภายใน 3 ชั่วโมง (CRASH-2) ยิ่งให้เร็วยิ่งดี ให้ >3 ชั่วโมงอาจเพิ่ม mortality! ถ้ามี TBI ร่วมด้วย ให้ 2g bolus ใน 10 นาที (CRASH-3)'},
+
+  {id:'d',phase:'primary',label:'D — Disability (Neurology)',sub:'ATLS 11: Airway over Spine + SMR',
+   q:'GCS 12 (E3V4M5), pupils 4mm bilateral reactive, glucose 108 — มีสิ่งใดต้องทำใน D ตาม ATLS 11 ที่สำคัญที่สุด?',
+   choices:['ไม่ต้องทำอะไรเพิ่ม GCS ยังอยู่ในเกณฑ์ดี','Intubate ทันทีเพราะ GCS < 15','ตรวจ lateralizing signs, motor/sensory ทุก limb ประเมิน spine restriction ตาม clinical judgment รักษา SpO₂>95% SBP≥110 mmHg monitor GCS ซ้ำ','ให้ mannitol 1g/kg ทันทีเพื่อ prophylactic ICP'],correct:2,
+   feedback:'ATLS 11: ตรวจ neuro ครบ + Selective Spine Motion Restriction ตาม clinical judgment (ไม่ใช่ routine collar) TBI neuroprotection: SpO₂>95%, SBP≥110 mmHg, normocapnia PaCO₂ 35–40 mmHg'},
+
+  {id:'e',phase:'primary',label:'E — Exposure & Environment',sub:'Expose ครบ + ป้องกัน Lethal Triad ทันที',
+   q:'Expose ผู้ป่วย Temp 35.8°C สิ่งใดต้องทำทันทีตาม ATLS 11?',
+   choices:['เปิดเสื้อผ้าทั้งหมดไว้เพื่อตรวจง่ายตลอดเวลา','เปิดเสื้อผ้าตรวจทั่วร่างกาย (รวม back ด้วย logroll) แล้วคลุมผ้าห่มอุ่นทันที ให้ warm IV fluid','ข้ามไป secondary survey เพราะ primary ครบแล้ว','ถอดเฉพาะส่วนที่บาดเจ็บ ไม่ต้องเปิดหมด'],correct:1,
+   feedback:'Expose ให้ครบ รวม back (logroll) แต่ป้องกัน hypothermia ทันที Lethal Triad = hypothermia + acidosis + coagulopathy — ต้องหยุดทุก element ตั้งแต่ primary survey'},
+
+  /* ─── SECONDARY ─── */
+  {id:'secondary-ample',phase:'secondary',label:'Secondary — AMPLE History',sub:'ซักประวัติก่อน head-to-toe เสมอ',
+   q:'Primary survey ผ่านแล้ว vital เริ่มคงที่ เริ่ม secondary survey — AMPLE ย่อมาจากอะไร และข้อใดสำคัญที่สุดใน trauma?',
+   choices:['Allergies, Medications, Past illness, Last meal, Events/MOI — Medications สำคัญที่สุด (anticoagulant? steroids?)','Age, Medical history, Physical exam, Labs, ECG','Airway, Mouth, Pain, Level of consciousness, Exposure','Anesthesia, Morphine, Pressure, Labs, Emergency surgery'],correct:0,
+   feedback:'AMPLE: Allergies / Medications (anticoagulant → ต้องมี reversal!) / Past illness & Pregnancy / Last meal (aspiration risk) / Events-MOI (บอก injury pattern) ซักก่อน head-to-toe ทุกครั้ง'},
+
+  {id:'secondary-head',phase:'secondary',label:'Secondary — Head & Neck',sub:'Basilar skull fracture signs',
+   q:'พบ Battle sign retroauricular ทั้งสองข้าง + CSF rhinorrhea จากจมูกซ้าย — แปลผลและทำอะไรต่อ?',
+   choices:['หยอดยา antibiotic เข้าช่องจมูกป้องกัน meningitis','Basilar skull fracture — งดใส่ NG tube ทาง nasal งด nasal intubation CT head ทันที ปรึกษา neurosurgery','ปกติหลังอุบัติเหตุ ไม่ต้องทำอะไรเพิ่ม','ทำ lumbar puncture เพื่อวัด opening pressure'],correct:1,
+   feedback:'Battle sign + CSF leak = Basilar skull fracture ห้ามใส่ NG tube ทาง nasal (เสี่ยง intracranial entry) CT head ทันทีและปรึกษา neurosurgery'},
+
+  {id:'secondary-abdomen',phase:'secondary',label:'Secondary — Abdomen & Pelvis',sub:'CT vs OR decision — unstable = OR ทันที',
+   q:'Guarding diffuse, FAST positive RUQ น้ำจำนวนมาก BP 88/60 HR 125 — ควรทำอะไร?',
+   choices:['CT abdomen-pelvis ทันทีเพื่อ characterize injury ก่อนตัดสินใจ OR','Immediate OR (Damage Control Surgery) — hemodynamically unstable + FAST positive = OR ทันที ไม่ต้อง CT','ทำ DPL ก่อนตัดสินใจ','รอ serial abdominal exams ทุก 2 ชั่วโมง'],correct:1,
+   feedback:'Unstable + FAST positive = OR ทันที CT ใช้เวลาและเสี่ยงใน unstable patient DPL แทบไม่ใช้แล้วเพราะ FAST แม่นยำกว่าและทำเร็วกว่า'},
+
+  {id:'secondary-extremity',phase:'secondary',label:'Secondary — Extremities & MSK',sub:'Hard signs vascular injury = emergent',
+   q:'ขาขวา mid-shaft femur deformity ปลายขาขาว เย็น CRT>3s ไม่มีชีพจร popliteal — ควรทำอะไร?',
+   choices:['Splint ขาและส่ง X-ray ก่อน','Vascular injury (Hard signs) — ประเมิน 5Ps ทันที เรียก vascular surgery ฉุกเฉิน CT angio ถ้า stable OR ทันทีถ้า unstable','ผูก tourniquet แล้วรอ OR เลย','ให้ heparin IV เพื่อป้องกัน thrombosis'],correct:1,
+   feedback:'Hard signs vascular injury (absent pulse, ischemic limb, 5Ps) + femur fx = ฉุกเฉิน ต้องการ vascular surgery และ OR ภายใน 4–6 ชั่วโมงก่อน limb ตาย'},
+
+  /* ─── DEFINITIVE ─── */
+  {id:'def-dcs',phase:'definitive',label:'Definitive — Damage Control Surgery',sub:'3 Phases: OR → ICU → Return OR',
+   q:'ผู้ป่วยต้องไป OR ด่วน สำหรับ intra-abdominal hemorrhage + femur open fracture หลักการ DCS ใน ATLS 11 คืออะไร?',
+   choices:['ซ่อมทุกอย่างให้เสร็จใน OR ครั้งเดียว','Phase 1: Control hemorrhage + contamination (abbreviated) → Phase 2: ICU resuscitation จน physiology ดี → Phase 3: Definitive repair','รักษา fracture ก่อนเสมอ fat embolism อันตราย','ทำ total body CT ก่อน OR เพื่อ plan ทุก injury'],correct:1,
+   feedback:'DCS Phase 1 = abbreviated surgery (pack + clamp + temp closure <90 นาที) Phase 2 = ICU (rewarm >36°C, pH>7.35, ลด lactate, แก้ coagulopathy 24–72h) Phase 3 = return OR ซ่อม definitive'},
+
+  {id:'def-tbi',phase:'definitive',label:'Definitive — TBI Management',sub:'Surgical emergency: SDH + midline shift',
+   q:'CT head พบ acute SDH ซ้าย 12mm midline shift 8mm GCS ลด 12→8 pupils ซ้ายขยาย 6mm — ควรทำอะไร?',
+   choices:['รอ repeat CT ใน 6 ชั่วโมง','ให้ mannitol 1g/kg IV แล้วรอดู','Emergency craniotomy ทันที — surgical indication: midline shift>5mm หรือ SDH>10mm หรือ GCS drop>2 หรือ unilateral dilated pupil','Decompressive craniectomy ในทุกกรณี severe TBI'],correct:2,
+   feedback:'Acute SDH: midline shift>5mm + GCS drop = surgical emergency ต้อง craniotomy ภายใน 4 ชั่วโมง (golden period) Mannitol ใช้เฉพาะ herniation signs ชั่วคราว ไม่ใช่ routine'},
+
+  {id:'def-icu',phase:'definitive',label:'Definitive — ICU & Tertiary Survey',sub:'แก้ Lethal Triad + Tertiary survey ค้นหา missed injury',
+   q:'ผ่าตัด DCS phase 1 เสร็จ ย้าย Surgical ICU ลำดับสำคัญใน 24 ชั่วโมงแรกคืออะไร?',
+   choices:['ถอดท่อช่วยหายใจทันทีเมื่อ GCS>8 เพื่อลด VAP','Tertiary survey + Rewarm>36°C + แก้ coagulopathy + แก้ acidosis pH>7.35 + Reassess labs ทุก 4–6h + VTE prophylaxis + Enteral nutrition ภายใน 24–48h','ทำ MRI ทุก organ ที่บาดเจ็บ','ให้ steroid IV ป้องกัน inflammatory response'],correct:1,
+   feedback:'ICU phase = แก้ Lethal Triad ทุก element (rewarm/coag/acid) + Tertiary survey ค้นหา missed injury (5–12% ของ significant trauma) + เริ่ม enteral nutrition ภายใน 24–48h + VTE prophylaxis'}
 ];
 
+/* ═══════════════════════ CONTENT LIBRARY ═══════════════════════ */
 const CL={
   primary:[
-    {icon:'🩸',title:'x — Exsanguinating Hemorrhage',sub:'ควบคุมเลือดออกรุนแรง',badge:'P',sections:[
-      {title:'Shock Class I–IV',cc:'cr',type:'table',headers:['Class','เลือดสูญเสีย','HR','BP','GCS/Urine'],rows:[['I','< 750 mL','< 100','ปกติ','Alert / >30 mL/h'],['II','750–1500','100–120','ปกติ↓','Anxious / 20–30'],['III ← ผป.นี้','1500–2000','120–140','↓↓','Confused / 5–15'],['IV','>2000','>140','↓↓↓','Lethargic / <5']]},
-      {title:'Tourniquet & Hemorrhage Control',cc:'ct',type:'list',items:[{b:'⚡',t:'<strong>Tourniquet (TQ):</strong> วางสูงกว่าแผล 5–8 cm ขันจน pain หายหรือชีพจรปลายหาย บันทึก "TQ time" ทุกครั้ง'},{b:'✋',t:'<strong>Wound packing:</strong> Hemostatic gauze (Combat Gauze) + direct pressure 3 นาที สำหรับแผล junctional'},{b:'💉',t:'<strong>REBOA:</strong> Resuscitative Endovascular Balloon Occlusion of Aorta — Level I center สำหรับ refractory hemorrhagic shock'}]}
+    {icon:'🩸',title:'x — Exsanguinating Hemorrhage',sub:'ควบคุมเลือดออกก่อน ABCDE ทุกสิ่ง',badge:'P',sections:[
+      {title:'Shock Classification I–IV',cc:'cr',type:'table',
+       headers:['Class','เลือดสูญเสีย','HR','BP','GCS / Urine output'],
+       rows:[['I','< 750 mL','< 100','ปกติ','Alert / >30 mL/hr'],
+             ['II','750–1,500 mL','100–120','ปกติ↓','Anxious / 20–30'],
+             ['III ← ผป.นี้','1,500–2,000 mL','120–140','↓↓','Confused / 5–15'],
+             ['IV','> 2,000 mL','> 140','↓↓↓','Lethargic / < 5']]},
+      {title:'Hemorrhage Control Techniques',cc:'ct',type:'list',items:[
+        {b:'⚡',t:'<strong>Tourniquet (TQ):</strong> วางสูงกว่าแผล 5–8 cm ขันจน pain หายหรือชีพจรปลายหาย บันทึก "TQ time" ทุกครั้ง ห้ามปลดเองก่อนถึง OR'},
+        {b:'✋',t:'<strong>Wound packing:</strong> Hemostatic gauze (Combat Gauze / ChitoGauze) + direct pressure ≥3 นาที สำหรับ junctional wounds ที่ใส่ TQ ปกติไม่ได้'},
+        {b:'🩺',t:'<strong>Junctional TQ (JETT/SAM-JT):</strong> ขาหนีบ รักแร้ คอ — ใช้เมื่อ standard TQ ไม่ได้ผล'},
+        {b:'💉',t:'<strong>REBOA:</strong> Resuscitative Endovascular Balloon Occlusion of Aorta — ใช้ใน Level I center สำหรับ refractory hemorrhagic shock ที่ไม่ตอบสนอง'}
+      ]}
     ]},
-    {icon:'💨',title:'A — Airway + C-spine',sub:'ทางเดินหายใจ + C-spine protection',badge:'P',sections:[
-      {title:'ประเมิน Airway',cc:'cr',type:'list',items:[{b:'🗣️',t:'<strong>Talk test:</strong> พูดได้ประโยคยาว = patent / คำเดียว = threatened / ไม่ออกเสียง = obstructed'},{b:'⚠️',t:'<strong>Danger signs → Definitive airway ทันที:</strong> Stridor, hoarse voice, drooling, cyanosis, subcutaneous emphysema คอ'},{b:'💊',t:'<strong>RSI:</strong> Ketamine 1–2 mg/kg + Succinylcholine 1.5 mg/kg หรือ Rocuronium 1.2 mg/kg'},{b:'🚨',t:'<strong>CICO → Cricothyrotomy ทันที:</strong> Cannot intubate-cannot oxygenate — scalpel-finger-tube technique'}]},
-      {title:'NEXUS C-spine Low-Risk Criteria',cc:'cb',type:'list',items:[{b:'✅',t:'<strong>ต้องครบ 5 ข้อ (จึงไม่ต้อง immobilize):</strong> 1) No midline tenderness 2) No focal deficit 3) Normal alertness 4) No intoxication 5) No distracting injury'},{b:'⚠️',t:'<strong>ผู้ป่วยนี้:</strong> GCS 12 = ไม่ผ่านข้อ 3 → immobilize จนกว่าจะ CT C-spine clearance'}]}
+    {icon:'💨',title:'A — Airway + C-spine',sub:'Airway มาก่อน Spine — ATLS 11 เน้นชัดเจน',badge:'P',sections:[
+      {title:'Airway Assessment',cc:'cr',type:'list',items:[
+        {b:'🗣️',t:'<strong>Talk test:</strong> พูดได้ประโยคยาว = patent / คำเดียว = threatened / ไม่ออกเสียง = obstructed'},
+        {b:'⚠️',t:'<strong>Danger signs → Definitive airway ทันที:</strong> Stridor, hoarse voice, drooling, cyanosis, subcutaneous emphysema คอ, hemoptysis'},
+        {b:'💊',t:'<strong>RSI:</strong> Ketamine 1–2 mg/kg IV + Succinylcholine 1.5 mg/kg หรือ Rocuronium 1.2 mg/kg'},
+        {b:'🚨',t:'<strong>CICO → Cricothyrotomy ทันที:</strong> Cannot intubate-cannot oxygenate — scalpel-finger-tube technique'}
+      ]},
+      {title:'Spine Motion Restriction — ATLS 11 ✏️',cc:'cb',type:'list',items:[
+        {b:'✅',t:'<strong>Selective SMR (ไม่ใช่ routine collar):</strong> ATLS 11 ไม่แนะนำ collar ทุกราย ใช้ clinical judgment ตาม mechanism + symptoms'},
+        {b:'⚠️',t:'<strong>ATLS 11 เน้นชัด:</strong> Airway management ต้องไม่ล่าช้าเพราะ spine concern ใช้ manual inline stabilization ระหว่างจัดการ airway'},
+        {b:'🔑',t:'<strong>ข้อบ่งชี้ SMR:</strong> High-risk MOI (high-speed, fall >3m) + midline tenderness หรือ neurological deficit หรือ altered sensorium หรือ distracting injury'},
+        {b:'📌',t:'<strong>ผู้ป่วยนี้:</strong> GCS 12 + MOI ความเร็วสูง → ใช้ manual inline stabilization ขณะ intubate ไม่ใช่ delay airway เพราะรอ collar'}
+      ]}
     ]},
     {icon:'🫁',title:'B — Breathing & Ventilation',sub:'6 Immediate Chest Life Threats',badge:'P',sections:[
-      {title:'6 Immediate Chest Life-Threatening Injuries',cc:'cr',type:'table',headers:['ภาวะ','Clinical Signs','การรักษา'],rows:[['Tension PTX ← ผป.','Hyper-resonance, BS↓, Trachea deviation, JVD, ↓BP','Needle decomp 2nd ICS MCL → chest drain'],['Open PTX','Sucking chest wound, BS↓','3-sided dressing → chest drain'],['Massive Hemothorax','Dull percussion, BS↓, Shock','Large bore drain 28-32Fr → MTP ถ้า>1.5L'],['Flail Chest','Paradoxical breathing, Crepitus','O₂, analgesia, intubate ถ้า fatigue'],['Cardiac Tamponade','Beck triad: JVD, Muffled HS, ↓BP','Pericardiocentesis → OR'],['Aortic Injury','Wide mediastinum, unequal BP','CT angio → TEVAR หรือ OR']]},
-      {title:'Needle Decompression ขั้นตอน',cc:'ct',type:'list',items:[{b:'1️⃣',t:'<strong>ตำแหน่ง:</strong> 2nd ICS MCL หรือ 4th–5th ICS AAL (ATLS 11 แนะนำ AAL เพราะผนังบางกว่า)'},{b:'2️⃣',t:'<strong>เข็ม:</strong> 14G IV catheter ≥ 8 cm — ฟัง/รู้สึก hiss of air เมื่อเข้าถูก'},{b:'3️⃣',t:'<strong>หลัง decompression:</strong> ทำ chest drain ทันที 4th–5th ICS MAL (triangle of safety) ขนาด 28–32 Fr'}]}
+      {title:'6 Immediate Life-Threatening Chest Injuries',cc:'cr',type:'table',
+       headers:['ภาวะ','Clinical Signs','การรักษา Primary Survey'],
+       rows:[
+         ['Tension PTX ← ผป.','Hyper-resonance, BS↓, Trachea deviation, JVD, ↓BP','Needle decomp 2nd ICS MCL → chest drain ทันที'],
+         ['Open PTX','Sucking chest wound, BS↓','3-sided dressing → chest drain'],
+         ['Massive Hemothorax','Dull percussion, BS↓, Shock','Large bore drain 28–32Fr → MTP ถ้า>1.5L'],
+         ['Flail Chest','Paradoxical breathing, Crepitus','O₂, analgesia, intubate ถ้า fatigue'],
+         ['Cardiac Tamponade','Beck triad: JVD, Muffled HS, ↓BP','Pericardiocentesis → OR'],
+         ['Aortic Injury','Wide mediastinum, unequal BP arms','CT angio → TEVAR หรือ OR']
+       ]},
+      {title:'Needle Decompression — ขั้นตอนถูกต้อง ✏️',cc:'ct',type:'list',items:[
+        {b:'1️⃣',t:'<strong>Primary site (ATLS 11):</strong> 2nd ICS Midclavicular Line (MCL) — first choice เสมอ'},
+        {b:'2️⃣',t:'<strong>Alternative site:</strong> 4th–5th ICS Anterior Axillary Line (AAL) — ใช้เมื่อ chest wall หนา (BMI สูง) หรือ MCL ล้มเหลว ไม่ใช่ทั้งคู่เท่าเทียม'},
+        {b:'3️⃣',t:'<strong>เข็ม:</strong> 14G IV catheter ≥8 cm — ฟัง/รู้สึก hiss of air เมื่อเข้าถูก'},
+        {b:'4️⃣',t:'<strong>หลัง decompression:</strong> ทำ chest drain ทันที 4th–5th ICS MAL (triangle of safety) ขนาด 28–32 Fr — ห้ามหยุดแค่ needle'}
+      ]}
     ]},
-    {icon:'💉',title:'C — Circulation + DCR + TXA',sub:'Damage Control Resuscitation',badge:'P',sections:[
-      {title:'3 หลัก Damage Control Resuscitation',cc:'cr',type:'list',items:[{b:'1️⃣',t:'<strong>Permissive Hypotension:</strong> SBP 80–90 mmHg (blunt trauma ที่ยังไม่ OR) — ถ้ามี TBI ด้วย SBP ≥ 110 mmHg'},{b:'2️⃣',t:'<strong>Hemostatic Resuscitation:</strong> pRBC:FFP:PLT = 1:1:1 หรือ Whole Blood — ลด crystalloid ให้มากที่สุด'},{b:'3️⃣',t:'<strong>Damage Control Surgery:</strong> control hemorrhage เร็วก่อน definitive — หยุด Lethal Triad'}]},
-      {title:'Massive Transfusion Protocol (MTP)',cc:'ca',type:'list',items:[{b:'🚨',t:'<strong>เปิด MTP เมื่อ:</strong> Shock Index ≥ 1 (HR/SBP), ABC score ≥ 2, คาดว่าต้องการ >10 units/24h'},{b:'🩸',t:'<strong>First line:</strong> O-negative pRBC (หญิงวัยเจริญพันธุ์) หรือ O-positive (ชาย) ขณะรอ type & screen'},{b:'💊',t:'<strong>Calcium:</strong> CaCl₂ 1g IV ทุก 4 units pRBC ป้องกัน hypocalcemia จาก citrate'},{b:'🌡️',t:'<strong>Warm all products:</strong> ใช้ blood warmer ทุกครั้ง ป้องกัน hypothermia coagulopathy'}]},
-      {title:'TXA — Tranexamic Acid',cc:'cp',type:'list',items:[{b:'📊',t:'<strong>CRASH-2 Trial:</strong> TXA ลด mortality จาก hemorrhage ได้ ~15% relative risk ใน 20,000+ ผู้ป่วย'},{b:'⏱️',t:'<strong>Time critical:</strong> ให้ภายใน 1h ดีสุด / 1–3h ยังได้ผล / >3h อาจ เพิ่ม mortality!'},{b:'💊',t:'<strong>Dose standard:</strong> 1g IV bolus ใน 10 นาที + 1g IV infusion ใน 8 ชั่วโมง'},{b:'🧠',t:'<strong>TBI + hemorrhage:</strong> 2g IV bolus ใน 10 นาที (CRASH-3 trial)'}]}
+    {icon:'💉',title:'C — Circulation + DCR + TXA',sub:'Blood products first — minimize crystalloid (ATLS 11)',badge:'P',sections:[
+      {title:'ATLS 11 Crystalloid Policy — เปลี่ยนจาก crystalloid-first',cc:'cr',type:'list',items:[
+        {b:'📊',t:'<strong>Evolution ของ ATLS:</strong> ATLS 9 = crystalloid 2L first-line → ATLS 10 = ลดเหลือ ≤1L (≥1.5L เพิ่ม mortality) → ATLS 11 = blood products first, crystalloid เป็น bridging เท่านั้น'},
+        {b:'🩸',t:'<strong>ATLS 11 หลักการ:</strong> ให้ blood products (whole blood หรือ pRBC:FFP:PLT 1:1:1) ทันที — ใช้ crystalloid ในปริมาณน้อยที่สุดเป็น "bridging" ขณะรอ blood products เท่านั้น ไม่ใช่ first-line resuscitation'},
+        {b:'💡',t:'<strong>ถ้าไม่มี blood products:</strong> ATLS 11 ยอมรับ Lactated Ringer\'s (ไม่ใช่ NSS) ปริมาณจำกัดเป็น acceptable bridge — แต่ต้องส่ง definitive care เร็วที่สุด (Standardized Flexibility)'},
+        {b:'⚠️',t:'<strong>เหตุผล:</strong> Large-volume crystalloid → dilutional coagulopathy, hypothermia, ARDS, abdominal compartment syndrome, เพิ่ม mortality'}
+      ]},
+      {title:'Damage Control Resuscitation (DCR)',cc:'ca',type:'list',items:[
+        {b:'1️⃣',t:'<strong>Permissive Hypotension:</strong> SBP 80–90 mmHg (blunt trauma ที่ยังไม่ OR) — ถ้ามี TBI ร่วมด้วย: SBP ≥110 mmHg'},
+        {b:'2️⃣',t:'<strong>Hemostatic Resuscitation:</strong> pRBC:FFP:PLT = 1:1:1 หรือ Whole Blood (WB) — WB ให้ผล hemostatic ครบถ้วนกว่า'},
+        {b:'3️⃣',t:'<strong>MTP activation:</strong> เปิดเมื่อ Shock Index ≥1 (HR/SBP) หรือ ABC score ≥2 หรือคาดว่าต้องการ >10 units/24h'},
+        {b:'💊',t:'<strong>Calcium:</strong> CaCl₂ 1g IV ทุก 4 units pRBC ป้องกัน hypocalcemia จาก citrate ใน blood products'},
+        {b:'🌡️',t:'<strong>Warm all products:</strong> ใช้ blood warmer ทุกครั้ง ป้องกัน hypothermia-induced coagulopathy'}
+      ]},
+      {title:'TXA — Tranexamic Acid (CRASH-2)',cc:'cp',type:'list',items:[
+        {b:'⏱️',t:'<strong>Time = lives:</strong> ให้ภายใน 1h ดีที่สุด / 1–3h ยังได้ผล / >3h อาจเพิ่ม mortality — ยิ่งเร็วยิ่งดี'},
+        {b:'💊',t:'<strong>Dose standard (hemorrhage):</strong> 1g IV bolus ใน 10 นาที + 1g IV infusion ใน 8 ชั่วโมง'},
+        {b:'🧠',t:'<strong>Dose TBI + hemorrhage (CRASH-3):</strong> 2g IV bolus ใน 10 นาที'},
+        {b:'📊',t:'<strong>CRASH-2 evidence:</strong> ลด mortality จาก hemorrhage ~15% relative risk ใน 20,211 ผู้ป่วย'}
+      ]}
     ]},
-    {icon:'🧠',title:'D — Disability (Neurology)',sub:'GCS + TBI + Spine',badge:'P',sections:[
-      {title:'TBI Neuroprotection Targets (ATLS 11)',cc:'cr',type:'grid',items:[{l:'SpO₂',v:'> 95% — hypoxia เพิ่ม secondary brain injury'},{l:'SBP',v:'≥ 110 mmHg (อายุ 50–69) / ≥ 100 (อายุ 15–49)'},{l:'PaCO₂',v:'35–40 mmHg — normocapnia'},{l:'Temp',v:'36–37.5°C — ป้องกัน fever'}]},
-      {title:'GCS — Glasgow Coma Scale',cc:'cb',type:'list',items:[{b:'👁️',t:'<strong>Eye (E):</strong> 4=Spontaneous, 3=To voice, 2=To pain, 1=None'},{b:'🗣️',t:'<strong>Verbal (V):</strong> 5=Oriented, 4=Confused, 3=Words, 2=Sounds, 1=None'},{b:'💪',t:'<strong>Motor (M):</strong> 6=Obey, 5=Localize, 4=Withdraw, 3=Flexion, 2=Extension, 1=None'},{b:'⚠️',t:'<strong>Intubation indications:</strong> GCS ≤ 8, apnea, anticipated deterioration, planned OR/CT'}]}
+    {icon:'🧠',title:'D — Disability (Neurology)',sub:'Airway priority + SMR + TBI neuroprotection',badge:'P',sections:[
+      {title:'TBI Neuroprotection — ATLS 11 Targets',cc:'cr',type:'list',items:[
+        {b:'💨',t:'<strong>SpO₂ > 95%:</strong> ห้าม hypoxia — เพิ่ม secondary brain injury อย่างรุนแรง'},
+        {b:'🩸',t:'<strong>SBP ≥ 110 mmHg:</strong> เป้าหมาย TBI ทั่วไปใน ATLS 11 (BTF แยกตาม age: ≥110 สำหรับ 15–49 ปี / ≥100 สำหรับ 50–69 ปี)'},
+        {b:'🫁',t:'<strong>PaCO₂ 35–40 mmHg (normocapnia):</strong> ห้าม hyperventilation routine — ทำได้เฉพาะ herniation ชั่วคราว'},
+        {b:'🌡️',t:'<strong>Temp 36–37.5°C:</strong> ป้องกัน fever — hyperthermia เพิ่ม secondary injury'},
+        {b:'🩺',t:'<strong>CPP (ICU phase):</strong> เป้าหมาย 60–70 mmHg เมื่อมี ICP monitor'}
+      ]},
+      {title:'Spine Motion Restriction — ATLS 11 (แก้ไข)',cc:'cb',type:'list',items:[
+        {b:'🔑',t:'<strong>Principle ใหม่:</strong> "Selective SMR" ไม่ใช่ routine immobilization ทุกราย ใช้ clinical judgment ตาม mechanism + signs'},
+        {b:'✅',t:'<strong>ไม่จำเป็นต้อง restrict:</strong> GCS 15, ไม่มี midline tenderness, ไม่มี neuro deficit, ไม่มี distracting injury, ไม่มี intoxication'},
+        {b:'⚠️',t:'<strong>ATLS 11 เน้นชัด:</strong> ห้าม delay airway management เพราะ spine concern ใช้ manual inline stabilization ระหว่าง intubation แทน'},
+        {b:'📌',t:'<strong>หลังจัดการ airway:</strong> ค่อยประเมิน spine และตัดสินใจ restrict หรือไม่ตาม imaging (CT C-spine)'}
+      ]}
     ]},
-    {icon:'👁️',title:'E — Exposure & Environment',sub:'Logroll + Lethal Triad prevention',badge:'P',sections:[
-      {title:'Lethal Triad — ต้องหยุดทุก element',cc:'cr',type:'list',items:[{b:'🌡️',t:'<strong>Hypothermia < 35°C:</strong> Platelet dysfunction + coagulation enzyme↓ → coagulopathy'},{b:'🔴',t:'<strong>Acidosis pH < 7.2:</strong> ลด cardiac contractility + coagulation factor function'},{b:'🩸',t:'<strong>Coagulopathy:</strong> Dilutional + consumption + hypothermia = เลือดไม่หยุด'},{b:'🛡️',t:'<strong>Prevention:</strong> Warm blankets, warm IV fluid 39°C, warm OR, Bair Hugger'}]},
-      {title:'Adjuncts to Primary Survey',cc:'ct',type:'list',items:[{b:'📡',t:'<strong>FAST:</strong> Pericardial, RUQ (Morrison), LUQ, Suprapubic — ทำระหว่าง primary survey'},{b:'📸',t:'<strong>X-ray:</strong> CXR portable + Pelvis AP ใน resuscitation bay'},{b:'🧪',t:'<strong>Labs:</strong> ABG (lactate/pH/BE), CBC, Coag, BMP, type & screen, pregnancy test'},{b:'🩺',t:'<strong>Foley catheter:</strong> target urine output > 0.5 mL/kg/hr'}]}
+    {icon:'👁️',title:'E — Exposure & Environment',sub:'Expose ครบ + Lethal Triad prevention',badge:'P',sections:[
+      {title:'Lethal Triad — ต้องหยุดทุก element',cc:'cr',type:'list',items:[
+        {b:'🌡️',t:'<strong>Hypothermia < 35°C:</strong> Platelet dysfunction + coagulation enzyme activity↓ → coagulopathy วนซ้ำ ป้องกัน: warm blankets, warm IV fluid 39°C, Bair Hugger, warm OR'},
+        {b:'🔴',t:'<strong>Acidosis pH < 7.2:</strong> ลด cardiac contractility + coagulation factor function แก้โดย hemostasis + adequate resuscitation ไม่ใช่ bicarbonate'},
+        {b:'🩸',t:'<strong>Coagulopathy:</strong> Dilutional (crystalloid) + consumption (bleeding) + hypothermia ป้องกัน: blood products ratio 1:1:1, ลด crystalloid'}
+      ]},
+      {title:'FAST + Adjuncts to Primary Survey',cc:'ct',type:'list',items:[
+        {b:'📡',t:'<strong>FAST (Extended eFAST):</strong> Pericardial, RUQ (Morrison), LUQ, Suprapubic + bilateral thorax — ทำระหว่าง primary survey'},
+        {b:'📸',t:'<strong>X-ray:</strong> CXR portable + Pelvis AP ใน resuscitation bay — ไม่ต้องย้ายผู้ป่วย'},
+        {b:'🧪',t:'<strong>Labs:</strong> ABG (lactate/pH/BE), CBC, Coag (PT/INR), BMP, type & screen, TEG/ROTEM (ถ้ามี), pregnancy test (หญิง)'},
+        {b:'🩺',t:'<strong>Foley catheter:</strong> target urine output > 0.5 mL/kg/hr เป็น guide resuscitation (ห้ามใส่ถ้ามี blood at meatus)'}
+      ]}
     ]}
   ],
   secondary:[
-    {icon:'📋',title:'AMPLE History',sub:'ซักประวัติก่อน head-to-toe ทุกครั้ง',badge:'S',sections:[
-      {title:'AMPLE — ทุกตัวอักษรสำคัญ',cc:'cb',type:'table',headers:['ตัวย่อ','ความหมาย','สำคัญใน Trauma'],rows:[['A — Allergies','ยา, อาหาร, Latex','ป้องกัน anaphylaxis ใน OR'],['M — Medications','Warfarin, Aspirin, Plavix, NOAC, Insulin, Steroids','Warfarin → Vit K + PCC; NOAC → reversal agent'],['P — Past/Preg','DM, HTN, CAD, COPD, Pregnancy','Preg → ซ้าย tilt + fetal monitoring'],['L — Last meal','กินล่าสุดเมื่อไร','Aspiration risk → RSI ถ้า full stomach'],['E — Events/MOI','Speed, Seatbelt, Airbag, Ejection','บอก injury pattern ทั้งหมด']]},
-      {title:'MOI → Injury Pattern',cc:'ca',type:'list',items:[{b:'🏍️',t:'<strong>Motorcycle + no helmet:</strong> TBI, facial fracture, C-spine, extremity fracture'},{b:'🚗',t:'<strong>Frontal high speed:</strong> Aortic injury, sternal fx, C-spine, femur fx'},{b:'↔️',t:'<strong>Side impact:</strong> Splenic/hepatic laceration, pelvic fx, brachial plexus'},{b:'⬇️',t:'<strong>Fall >6m:</strong> Calcaneus fx, vertebral compression, pelvic ring'}]}
+    {icon:'📋',title:'AMPLE History',sub:'ซักก่อน head-to-toe เสมอ',badge:'S',sections:[
+      {title:'AMPLE — ทุกตัวอักษรสำคัญ',cc:'cb',type:'table',
+       headers:['ตัวย่อ','ความหมาย','สำคัญใน Trauma'],
+       rows:[
+         ['A — Allergies','ยา, อาหาร, Latex','ป้องกัน anaphylaxis ใน OR'],
+         ['M — Medications','Warfarin, Aspirin, Plavix, NOAC, Insulin, Steroids','Warfarin → Vit K + PCC; NOAC → specific reversal'],
+         ['P — Past/Preg','DM, HTN, CAD, COPD, Pregnancy','Pregnancy → supine tilt ซ้าย + fetal monitoring'],
+         ['L — Last meal','กินล่าสุดเมื่อไร','Full stomach = aspiration risk → RSI mandatory'],
+         ['E — Events/MOI','Speed, Seatbelt, Airbag, Ejection','บอก injury pattern ทั้งหมด']
+       ]},
+      {title:'MOI → Injury Pattern Prediction',cc:'ca',type:'list',items:[
+        {b:'🏍️',t:'<strong>Motorcycle + no helmet:</strong> TBI, facial fracture, C-spine injury, extremity fracture'},
+        {b:'🚗',t:'<strong>Frontal high-speed:</strong> Aortic injury, sternal fracture, C-spine, femur fracture'},
+        {b:'↔️',t:'<strong>Side impact:</strong> Splenic/hepatic laceration, pelvic fracture, brachial plexus injury'},
+        {b:'⬇️',t:'<strong>Fall >6m:</strong> Calcaneus fracture, vertebral compression, pelvic ring disruption'}
+      ]}
     ]},
-    {icon:'🦷',title:'Head, Neck & Face',sub:'Basilar skull + Penetrating neck',badge:'S',sections:[
-      {title:'Signs of Basilar Skull Fracture',cc:'cr',type:'list',items:[{b:'⚫',t:'<strong>Raccoon eyes:</strong> Anterior fossa fracture — มักปรากฏ 6–12h หลังบาดเจ็บ'},{b:'⚫',t:'<strong>Battle sign:</strong> Middle fossa fracture — มักปรากฏ 12–24h'},{b:'💧',t:'<strong>CSF otorrhea/rhinorrhea:</strong> test ด้วย β₂-transferrin assay'},{b:'🔇',t:'<strong>Hemotympanum:</strong> เลือดใน tympanic membrane = temporal bone fracture'},{b:'🚫',t:'<strong>ห้าม:</strong> NG tube ทาง nasal, nasal intubation ถ้าสงสัย basilar skull fracture'}]}
+    {icon:'🦷',title:'Head, Neck & Face',sub:'Basilar skull + C-spine + Penetrating neck',badge:'S',sections:[
+      {title:'Signs of Basilar Skull Fracture',cc:'cr',type:'list',items:[
+        {b:'⚫',t:'<strong>Raccoon eyes (periorbital ecchymosis):</strong> Anterior fossa fracture — มักปรากฏ 6–12h'},
+        {b:'⚫',t:'<strong>Battle sign (retroauricular ecchymosis):</strong> Middle fossa fracture — มักปรากฏ 12–24h'},
+        {b:'💧',t:'<strong>CSF rhinorrhea/otorrhea:</strong> test ด้วย β₂-transferrin assay (มาตรฐาน) หรือ glucose strip'},
+        {b:'🔇',t:'<strong>Hemotympanum:</strong> เลือดใน tympanic membrane = temporal bone fracture'},
+        {b:'🚫',t:'<strong>ห้ามเด็ดขาด:</strong> NG tube ทาง nasal และ nasal intubation ถ้าสงสัย basilar skull fracture'}
+      ]}
     ]},
-    {icon:'🫀',title:'Abdomen & Pelvis',sub:'CT vs OR + Pelvic binder',badge:'S',sections:[
-      {title:'CT vs OR Decision',cc:'cr',type:'table',headers:['Hemodynamic','FAST','การรักษา'],rows:[['UNSTABLE','Positive','OR ทันที (DCS)'],['UNSTABLE','Negative','ค้นหา extra-abdominal source'],['STABLE','Positive/Negative','CT abdomen-pelvis with contrast'],['Pediatric STABLE','Positive','CT → nonoperative ถ้าทำได้']]},
-      {title:'Pelvic Fracture',cc:'ca',type:'list',items:[{b:'🦴',t:'<strong>Open book fracture:</strong> เสียเลือดได้ 2–4 ลิตร → pelvic binder ทันที'},{b:'🩺',t:'<strong>Pelvic binder:</strong> วางที่ greater trochanter (ไม่ใช่ iliac crest)'},{b:'⚠️',t:'<strong>Unstable pelvis + shock:</strong> REBOA zone III หรือ angioembolization'}]}
+    {icon:'🫀',title:'Abdomen & Pelvis',sub:'CT vs OR Decision + Pelvic management',badge:'S',sections:[
+      {title:'CT vs OR Decision — ATLS 11',cc:'cr',type:'table',
+       headers:['Hemodynamic status','FAST result','การรักษา'],
+       rows:[
+         ['UNSTABLE','Positive','OR ทันที (DCS) — ห้าม CT'],
+         ['UNSTABLE','Negative','ค้นหา extra-abdominal hemorrhage (pelvis, chest, long bone)'],
+         ['STABLE','Positive หรือ Negative','CT abdomen-pelvis with IV contrast'],
+         ['Pediatric STABLE','Positive','CT → nonoperative management ถ้าเงื่อนไขครบ']
+       ]},
+      {title:'Pelvic Fracture & Hemorrhage Control',cc:'ca',type:'list',items:[
+        {b:'🦴',t:'<strong>Open book fracture:</strong> เสียเลือดได้ 2–4 ลิตร → pelvic binder ทันที'},
+        {b:'🩺',t:'<strong>Pelvic binder:</strong> วางที่ greater trochanter (ไม่ใช่ iliac crest) บีบ pelvis ลด pelvic volume'},
+        {b:'💉',t:'<strong>Angioembolization:</strong> hemodynamically stable แต่ CT พบ active bleeding'},
+        {b:'⚠️',t:'<strong>Unstable pelvis + refractory shock:</strong> REBOA zone III หรือ preperitoneal pelvic packing ก่อน OR'}
+      ]}
     ]},
     {icon:'🦴',title:'Extremities & Vascular',sub:'Hard signs + Compartment syndrome',badge:'S',sections:[
-      {title:'Vascular Injury — Hard vs Soft Signs',cc:'cr',type:'table',headers:['ประเภท','Signs','การจัดการ'],rows:[['Hard Signs → OR','Absent pulse, Arterial bleeding, Expanding hematoma, Bruit/thrill, Ischemia (5Ps)','OR/vascular ฉุกเฉิน ± CT angio'],['Soft Signs → Observe','ABI < 0.9, Small stable hematoma, Nerve injury, Proximity','CT angio → observation หรือ OR']]},
-      {title:'Compartment Syndrome',cc:'ca',type:'list',items:[{b:'⚠️',t:'<strong>6 Ps:</strong> Pain (passive stretch), Pressure (tense), Paresthesia, Paralysis, Pallor, Pulselessness (late)'},{b:'📊',t:'<strong>Diagnosis:</strong> Compartment pressure > 30 mmHg หรือ Delta pressure < 30 mmHg → fasciotomy'},{b:'🔪',t:'<strong>Fasciotomy:</strong> ขาล่าง 4 compartments, forearm 2–3 compartments'}]}
+      {title:'Vascular Injury — Hard vs Soft Signs',cc:'cr',type:'table',
+       headers:['ประเภท','Signs','การจัดการ'],
+       rows:[
+         ['Hard Signs → OR ทันที','Absent pulse, Active arterial bleeding, Expanding hematoma, Bruit/thrill, Limb ischemia (5Ps)','OR/vascular surgery ฉุกเฉิน ± CT angio ถ้า stable'],
+         ['Soft Signs → Observe/Image','ABI<0.9, Small stable hematoma, Peripheral nerve deficit, Proximity wound','CT angio → observation หรือ OR']
+       ]},
+      {title:'Compartment Syndrome',cc:'ca',type:'list',items:[
+        {b:'⚠️',t:'<strong>6 Ps:</strong> Pain (with passive stretch), Pressure (tense compartment), Paresthesia, Paralysis, Pallor, Pulselessness (late sign)'},
+        {b:'📊',t:'<strong>Diagnosis:</strong> Compartment pressure >30 mmHg หรือ Delta pressure (DBP – compartment) <30 mmHg → fasciotomy ทันที'},
+        {b:'🔪',t:'<strong>Fasciotomy:</strong> ขาล่าง 4 compartments, forearm 2–3 compartments — ต้องเปิดทุก compartment ที่ affected'}
+      ]}
     ]}
   ],
   definitive:[
-    {icon:'🔪',title:'Damage Control Surgery (DCS)',sub:'3 Phases: OR → ICU → Return',badge:'D',sections:[
-      {title:'DCS 3 Phases',cc:'cp',type:'table',headers:['Phase','สถานที่','เป้าหมาย','เวลา'],rows:[['Phase 0: Resuscitation','ED','xABCDE, MTP, TXA, Warming','<30 นาที'],['Phase 1: DCS Operation','OR','Hemorrhage control (pack/clamp), Contamination control, Temp closure','<60–90 นาที'],['Phase 2: ICU Resuscitation','SICU','Rewarm>36°C, pH>7.35, แก้ coagulopathy, ลด lactate','24–72 ชั่วโมง'],['Phase 3: Definitive Surgery','OR','Definitive repair ทุก injury, ปิดผนังหน้าท้อง','เมื่อ physiology ดี']]},
-      {title:'Temporary Abdominal Closure',cc:'ct',type:'list',items:[{b:'🩺',t:'<strong>Bogotá bag:</strong> plastic bag sterile ปิดหน้าท้องฉุกเฉิน — ง่าย ถูก'},{b:'🩺',t:'<strong>NPWT/VAC:</strong> ลด edema, ป้องกัน contamination, ช่วย fascial closure'},{b:'⚠️',t:'<strong>Abdominal Compartment Syndrome:</strong> IAP > 20 mmHg + organ dysfunction → decompress ด้วย laparotomy'}]}
+    {icon:'🔪',title:'Damage Control Surgery (DCS)',sub:'3 Phases: OR → SICU → Return OR',badge:'D',sections:[
+      {title:'DCS 3 Phases — ATLS 11',cc:'cp',type:'table',
+       headers:['Phase','สถานที่','เป้าหมาย','เวลา'],
+       rows:[
+         ['Phase 0: Resuscitation','ED / Trauma bay','xABCDE, MTP activation, TXA, Warming, IV access','<30 นาทีถึง OR'],
+         ['Phase 1: DCS Operation','OR','Control hemorrhage (pack/clamp), Contamination control (staple bowel), Temporary abdominal closure','<60–90 นาที'],
+         ['Phase 2: ICU Resuscitation','Surgical ICU','Rewarm >36°C, pH >7.35, แก้ coagulopathy (TEG/ROTEM guided), ลด lactate','24–72 ชั่วโมง'],
+         ['Phase 3: Definitive Surgery','OR','Definitive repair ทุก injury, fascial closure','เมื่อ physiology คืนสู่ปกติ']
+       ]},
+      {title:'Temporary Abdominal Closure (TAC)',cc:'ct',type:'list',items:[
+        {b:'🩺',t:'<strong>Bogotá bag:</strong> plastic bag sterile ปิดฉุกเฉิน — ง่าย รวดเร็ว ถูก'},
+        {b:'🩺',t:'<strong>NPWT/VAC (Negative Pressure Wound Therapy):</strong> ลด edema, ป้องกัน contamination, ช่วย fascial closure ครั้งถัดไป'},
+        {b:'⚠️',t:'<strong>Abdominal Compartment Syndrome:</strong> IAP >20 mmHg + organ dysfunction → emergency decompressive laparotomy'}
+      ]}
     ]},
-    {icon:'🧠',title:'TBI Definitive Management',sub:'Surgical indication + ICP control',badge:'D',sections:[
-      {title:'Surgical Indications',cc:'cr',type:'table',headers:['ภาวะ','Surgical Indication','Target time'],rows:[['EDH','Volume>30mL หรือ >15mm หรือ midline shift>5mm','<1–4 ชั่วโมง'],['SDH ← ผป.นี้','Clot>10mm หรือ midline shift>5mm หรือ GCS drop>2','<4 ชั่วโมง'],['ICH','Volume>50mL หรือ GCS<6','ปรึกษา Neuro'],['Depressed Skull Fx','Open หรือ >thickness of skull','ไม่เร่ง ยกเว้น open']]},
-      {title:'ICP Management',cc:'cb',type:'list',items:[{b:'🛏️',t:'<strong>Head of bed 30°:</strong> ลด ICP โดยไม่ลด CPP — standard position'},{b:'💊',t:'<strong>Mannitol 0.25–1 g/kg:</strong> ใช้ใน herniation signs เท่านั้น — serum osm < 320'},{b:'💊',t:'<strong>Hypertonic saline 3%:</strong> ทางเลือกแทน mannitol ดีกว่าในกรณี hypotension'},{b:'📊',t:'<strong>ICP monitor:</strong> EVD ใน severe TBI (GCS≤8) เป้าหมาย ICP<22 mmHg, CPP 60–70 mmHg'}]}
+    {icon:'🧠',title:'TBI Definitive Management',sub:'Surgical indication + ICP management',badge:'D',sections:[
+      {title:'Surgical Indications — Head Injury',cc:'cr',type:'table',
+       headers:['ภาวะ','Surgical Indication','Target time'],
+       rows:[
+         ['Epidural Hematoma (EDH)','Volume >30 mL หรือ >15 mm หรือ midline shift >5 mm','<1–4 ชั่วโมง'],
+         ['Subdural (SDH) ← ผป.','Clot >10 mm หรือ midline shift >5 mm หรือ GCS drop >2','<4 ชั่วโมง'],
+         ['Intracerebral (ICH)','Volume >50 mL หรือ GCS <6 หรือ posterior fossa >20 mL','ปรึกษา Neurosurgery'],
+         ['Depressed Skull Fx','Open หรือ >skull thickness','ไม่เร่ง ยกเว้น open/contaminated']
+       ]},
+      {title:'ICP Management (Non-surgical)',cc:'cb',type:'list',items:[
+        {b:'🛏️',t:'<strong>Head of bed 30°:</strong> ลด ICP โดยไม่ลด CPP — standard position ทุกราย'},
+        {b:'💊',t:'<strong>Mannitol 0.25–1 g/kg:</strong> ใช้เฉพาะ herniation signs เท่านั้น ไม่ใช่ prophylactic serum osm ต้อง <320 mOsm/L'},
+        {b:'💊',t:'<strong>Hypertonic saline 3% NaCl:</strong> ทางเลือกแทน mannitol ดีกว่าในกรณี hypotension'},
+        {b:'🫁',t:'<strong>Hyperventilation:</strong> ใช้เฉพาะ active herniation (PaCO₂ 30–35 mmHg ชั่วคราว) ห้าม routine'},
+        {b:'📊',t:'<strong>ICP monitor (EVD):</strong> ใน severe TBI (GCS ≤8) เป้าหมาย ICP <22 mmHg, CPP 60–70 mmHg'}
+      ]}
     ]},
-    {icon:'🏥',title:'ICU Care & Tertiary Survey',sub:'Missed injury + Complications',badge:'D',sections:[
-      {title:'ICU Targets',cc:'cg',type:'grid',items:[{l:'Temperature',v:'>36°C — warming + warm IV fluid'},{l:'pH / Lactate',v:'pH>7.35, Lactate<2 mmol/L ใน 24h'},{l:'Coagulation',v:'INR<1.5, Fibrinogen>150, PLT>50K'},{l:'Hemoglobin',v:'Hb ≥7 g/dL (≥8–10 ถ้ามี CAD/TBI)'}]},
-      {title:'Complications to Monitor',cc:'cr',type:'list',items:[{b:'🫁',t:'<strong>ARDS:</strong> P/F<300 → lung protective Vt 6 mL/kg IBW, plateau<30 cmH₂O'},{b:'🩺',t:'<strong>AKI:</strong> monitor urine output, creatinine ทุก 6h — myoglobinuria, contrast nephropathy'},{b:'🩸',t:'<strong>DVT/PE:</strong> mechanical prophylaxis ทันที + LMWH เมื่อ hemostasis ok (48–72h)'},{b:'🦠',t:'<strong>Sepsis:</strong> VAP, CAUTI, wound infection — de-escalate antibiotics เร็ว'},{b:'🍽️',t:'<strong>Nutrition:</strong> enteral feeding ภายใน 24–48h — 25 kcal/kg/day'}]},
-      {title:'Tertiary Survey',cc:'cb',type:'list',items:[{b:'🔍',t:'<strong>ทำเมื่อ:</strong> ผู้ป่วยตื่น ให้ความร่วมมือได้ ปกติ 24–72h หลัง admission'},{b:'📊',t:'<strong>Missed injury rate:</strong> 5–12% — commonly missed: small hemopneumothorax, extremity fracture, diaphragm injury'},{b:'📋',t:'<strong>ประกอบด้วย:</strong> ซักประวัติเพิ่ม + ตรวจร่างกาย head-to-toe ซ้ำ + ทบทวน X-ray/CT ทั้งหมด'}]}
+    {icon:'🏥',title:'ICU Care & Tertiary Survey',sub:'แก้ Lethal Triad + ค้นหา missed injury',badge:'D',sections:[
+      {title:'ICU Resuscitation Targets',cc:'cg',type:'grid',items:[
+        {l:'Temperature',v:'>36°C — warming blanket, warm IV fluid ก่อน return to OR'},
+        {l:'pH / Lactate',v:'pH >7.35, Lactate <2 mmol/L ใน 24h'},
+        {l:'Coagulation',v:'INR <1.5, Fibrinogen >150, PLT >50K — TEG/ROTEM guided'},
+        {l:'Hemoglobin',v:'Hb ≥7 g/dL (≥8–10 ถ้ามี CAD หรือ TBI)'}
+      ]},
+      {title:'ICU Complications — Monitor ทุกวัน',cc:'cr',type:'list',items:[
+        {b:'🫁',t:'<strong>ARDS:</strong> P/F ratio <300 → lung protective: Vt 6 mL/kg IBW, plateau <30 cmH₂O, PEEP guided'},
+        {b:'🩺',t:'<strong>AKI:</strong> urine output, creatinine ทุก 6h — myoglobinuria (crush), contrast nephropathy'},
+        {b:'🩸',t:'<strong>DVT/PE:</strong> mechanical prophylaxis ทันที + LMWH เมื่อ hemostasis ok (48–72h)'},
+        {b:'🦠',t:'<strong>Sepsis:</strong> VAP, CAUTI, wound infection — culture ก่อน antibiotic, de-escalate เร็ว'},
+        {b:'🍽️',t:'<strong>Nutrition:</strong> enteral feeding ภายใน 24–48h ผ่าน NGT/OGT — 25 kcal/kg/day'}
+      ]},
+      {title:'Tertiary Survey — ค้นหา Missed Injury',cc:'cb',type:'list',items:[
+        {b:'🔍',t:'<strong>ทำเมื่อ:</strong> ผู้ป่วยตื่น ให้ความร่วมมือได้ ปกติ 24–72h หลัง admission'},
+        {b:'📊',t:'<strong>Missed injury rate:</strong> 5–12% — commonly missed: small hemopneumothorax, extremity fracture, esophageal injury, diaphragm injury'},
+        {b:'📋',t:'<strong>ประกอบด้วย:</strong> ซักประวัติเพิ่ม + ตรวจร่างกาย head-to-toe ซ้ำ + ทบทวน X-ray/CT ทั้งหมด + documented ใน chart'}
+      ]}
+    ]}
+  ],
+  penetrating:[
+    {icon:'🔫',title:'Penetrating Trauma — ATLS 11 NEW Chapter',sub:'บทใหม่แยกต่างหาก',badge:'N',sections:[
+      {title:'ทำไม ATLS 11 แยก Penetrating Chapter',cc:'co',type:'list',items:[
+        {b:'📖',t:'<strong>ATLS 11 (2025)</strong> มีบท Penetrating Trauma โดยเฉพาะเป็นครั้งแรก เพราะ mechanism และ injury pattern แตกต่างจาก blunt trauma อย่างมาก'},
+        {b:'🔫',t:'<strong>Gunshot wound (GSW):</strong> injury pattern ขึ้นกับ velocity (low/high), yaw, fragmentation — high-velocity GSW ทำลาย tissue นอก bullet track ได้ไกลมาก'},
+        {b:'🔪',t:'<strong>Stab wound:</strong> low velocity, injury จำกัดตาม tract — selective non-operative management เป็น standard ถ้า hemodynamically stable'}
+      ]},
+      {title:'Penetrating Trauma vs Blunt — Key Differences',cc:'co',type:'table',
+       headers:['ประเด็น','Blunt Trauma','Penetrating Trauma'],
+       rows:[
+         ['Spine immobilization','ตาม clinical judgment (SMR)','แทบไม่มีประโยชน์ — ห้าม delay treatment'],
+         ['FAST utility','สูง — ตรวจ free fluid','จำกัด — wound track อาจ localize ไม่ได้'],
+         ['OR threshold','Unstable + FAST positive','Hard signs หรือ peritonitis = OR ทันที'],
+         ['Nonoperative mgmt','Liver/spleen laceration stable','Stab wound anterior abdomen ถ้า stable'],
+         ['Antibiotic','ตาม contamination','ให้ prophylactic ทุกราย penetrating abdomen']
+       ]},
+      {title:'Penetrating Neck Injury — Zone Classification',cc:'cr',type:'list',items:[
+        {b:'I',t:'<strong>Zone I (ต่ำกว่า cricoid):</strong> ยาก access — CT angio เพื่อ plan ก่อน OR'},
+        {b:'II',t:'<strong>Zone II (cricoid → angle of mandible):</strong> บริเวณที่บาดเจ็บบ่อยที่สุด — symptomatic = OR ทันที; asymptomatic = CT angio'},
+        {b:'III',t:'<strong>Zone III (สูงกว่า angle of mandible):</strong> เข้า surgical ยาก — CT angio + endovascular approach'},
+        {b:'⚠️',t:'<strong>Hard signs → OR ทันที ทุก zone:</strong> Active hemorrhage, expanding hematoma, airway compromise, neurological deficit'}
+      ]},
+      {title:'Penetrating Chest — Management',cc:'cb',type:'list',items:[
+        {b:'🩸',t:'<strong>Massive hemothorax (>1.5L immediate หรือ >200 mL/hr):</strong> thoracotomy'},
+        {b:'🫀',t:'<strong>Cardiac tamponade:</strong> ED thoracotomy ถ้า PEA หรือ signs of life recent'},
+        {b:'🔴',t:'<strong>Resuscitative thoracotomy:</strong> penetrating cardiac arrest = open ใน ED ถ้า witnessed arrest หรือ signs of life <15 นาที'}
+      ]},
+      {title:'Team Communication — ATLS 11 New Focus',cc:'cg',type:'list',items:[
+        {b:'📢',t:'<strong>Closed-loop communication:</strong> ผู้รับคำสั่งต้อง repeat back ทุกครั้ง ผู้สั่งต้อง confirm'},
+        {b:'👥',t:'<strong>Role clarity:</strong> กำหนด team leader, airway person, circulation person, scribe ก่อนผู้ป่วยมาถึง'},
+        {b:'📏',t:'<strong>Standardized Flexibility:</strong> ATLS 11 ยอมรับว่า protocol ต้อง adapt ตาม local resources — Level I ≠ rural hospital'},
+        {b:'🗣️',t:'<strong>Trauma-informed care:</strong> บทใหม่เน้น respect, dignity, communication กับผู้ป่วยและครอบครัว'}
+      ]}
     ]}
   ]
 };
 
-/* STATE */
+/* ─── STATE ─── */
 let cur=0,score=0,correct=0,wrong=0,answered=false,results=[];
 let postDetailOpen=false;
 
-/* NAVIGATION */
+/* ─── NAV ─── */
 function switchPage(p){
   ['home','quiz','content'].forEach(id=>{
     document.getElementById('page-'+id).classList.toggle('active',id===p);
@@ -425,9 +657,9 @@ function switchPage(p){
 }
 function goQuiz(){switchPage('quiz')}
 
-/* CONTENT LIBRARY */
+/* ─── CONTENT LIBRARY ─── */
 function buildLib(){
-  ['primary','secondary','definitive'].forEach(ph=>{
+  ['primary','secondary','definitive','penetrating'].forEach(ph=>{
     const c=document.getElementById('acc-'+ph);
     if(c.dataset.built) return;
     c.dataset.built='1';
@@ -435,19 +667,19 @@ function buildLib(){
   });
 }
 function switchContent(ph,btn){
-  document.querySelectorAll('.ctab').forEach(t=>{t.classList.remove('active','primary','secondary','definitive')});
+  document.querySelectorAll('.ctab').forEach(t=>t.classList.remove('active','primary','secondary','definitive','penetrating'));
   btn.classList.add('active',ph);
   document.querySelectorAll('.csec').forEach(s=>s.classList.remove('active'));
   document.getElementById('cs-'+ph).classList.add('active');
 }
 function makeAccordion(item,id){
   const div=document.createElement('div');
-  div.className='accordion'; div.id='ac-'+id;
-  const bc=item.badge==='P'?'bp':item.badge==='S'?'bs':'bd';
+  div.className='accordion';div.id='ac-'+id;
+  const bc=item.badge==='P'?'bp':item.badge==='S'?'bs':item.badge==='N'?'bpen':'bd';
   div.innerHTML=`<div class="achdr" onclick="tog('${id}')">
     <div class="aicon">${item.icon}</div>
     <div class="alabel"><div class="atitle">${item.title}</div><div class="asub">${item.sub}</div></div>
-    <span class="abadge ${bc}">${item.badge}</span><span class="achev">▼</span>
+    <span class="abadge ${bc}">${item.badge==='N'?'NEW':item.badge}</span><span class="achev">▼</span>
   </div><div class="abody">${renderSecs(item.sections)}</div>`;
   return div;
 }
@@ -460,7 +692,7 @@ function renderC(s){
   return'';
 }
 
-/* QUIZ */
+/* ─── QUIZ ─── */
 function gp(i){return i<=6?'primary':i<=10?'secondary':'definitive'}
 function updateStats(){
   const ph=cur<steps.length?gp(cur):'definitive';
@@ -468,15 +700,13 @@ function updateStats(){
   document.getElementById('plabel').textContent=pn[ph];
   const pct=Math.round(cur/steps.length*100);
   const bar=document.getElementById('pbar');
-  bar.style.width=pct+'%';
-  bar.className='pfill '+(cur>=steps.length?'done':ph);
+  bar.style.width=pct+'%';bar.className='pfill '+(cur>=steps.length?'done':ph);
   document.getElementById('ppct').textContent=pct+'%';
   document.getElementById('sstep').textContent=Math.min(cur+1,steps.length)+'/'+steps.length;
   document.getElementById('sscore').textContent=score;
   document.getElementById('scorrect').textContent=correct;
   document.getElementById('swrong').textContent=wrong;
-  // pips
-  const el=document.getElementById('pips'); el.innerHTML='';
+  const el=document.getElementById('pips');el.innerHTML='';
   steps.forEach((_,i)=>{
     const pip=document.createElement('div');
     const p=gp(i);
@@ -487,7 +717,7 @@ function updateStats(){
 function renderQuiz(){
   updateStats();
   if(cur>=steps.length){showDone();return}
-  const s=steps[cur]; answered=false; postDetailOpen=false;
+  const s=steps[cur];answered=false;postDetailOpen=false;
   const banner=cur===0||gp(cur)!==gp(cur-1)?makeBanner(s.phase):'';
   const pn={primary:'Primary Survey',secondary:'Secondary Survey',definitive:'Definitive'};
   const refKey={x:'primary-0',a:'primary-1',b:'primary-2','c-dcr':'primary-3',txa:'primary-3',d:'primary-4',e:'primary-5','secondary-ample':'secondary-0','secondary-head':'secondary-1','secondary-abdomen':'secondary-2','secondary-extremity':'secondary-3','def-dcs':'definitive-0','def-tbi':'definitive-1','def-icu':'definitive-2'}[s.id];
@@ -517,19 +747,23 @@ function renderQuiz(){
 }
 function getRefHtml(key){
   if(!key) return'<p style="color:var(--text-muted);font-size:14px;padding:8px 0">ไม่มี reference เพิ่มเติม</p>';
-  const [ph,idx]=key.split('-'); const item=CL[ph]?.[+idx];
+  const [ph,idx]=key.split('-');const item=CL[ph]?.[+idx];
   return item?renderSecs(item.sections):'';
 }
 function makeBanner(p){
-  const c={primary:{icon:'🔴',title:'PRIMARY SURVEY — xABCDE',desc:'ประเมินและรักษา life threats ทันที'},secondary:{icon:'🔵',title:'SECONDARY SURVEY',desc:'AMPLE History + Head-to-Toe — ค้นหา injury ทั้งหมด'},definitive:{icon:'🟣',title:'DEFINITIVE MANAGEMENT',desc:'Surgery + ICU — รักษา definitive และป้องกัน complications'}}[p];
+  const c={
+    primary:{icon:'🔴',title:'PRIMARY SURVEY — xABCDE',desc:'ประเมินและรักษา life threats ทันที (Hemorrhage before Airway)'},
+    secondary:{icon:'🔵',title:'SECONDARY SURVEY',desc:'AMPLE History + Head-to-Toe — ค้นหา injury ทั้งหมด'},
+    definitive:{icon:'🟣',title:'DEFINITIVE MANAGEMENT',desc:'Surgery + ICU — รักษา definitive และป้องกัน complications'}
+  }[p];
   return`<div class="pbanner ${p}"><div class="pb-icon">${c.icon}</div><div><div class="pb-title">${c.title}</div><div class="pb-desc">${c.desc}</div></div></div>`;
 }
 function toggleRef(){
   const p=document.getElementById('rpanel'),a=document.getElementById('rarrow');
-  p.classList.toggle('open'); a.textContent=p.classList.contains('open')?'▲':'▼';
+  p.classList.toggle('open');a.textContent=p.classList.contains('open')?'▲':'▼';
 }
 function answer(idx){
-  if(answered)return; answered=true;
+  if(answered)return;answered=true;
   const s=steps[cur];
   document.querySelectorAll('.choice').forEach(b=>b.disabled=true);
   const ok=idx===s.correct;
@@ -553,20 +787,28 @@ function togglePost(){
 }
 function showHint(){
   if(answered)return;
-  const h=['ใน xABCDE อะไรคือ life-threatening ที่สุดในสถานการณ์นี้?','ถ้าไม่ทำสิ่งนี้ภายใน 5 นาที ผู้ป่วยจะเป็นอย่างไร?','ดู vital signs ทั้งหมด — อะไรบ่งชี้อันตรายมากที่สุด?'];
+  const h=['ใน xABCDE อะไรคือ life-threatening ที่สุดในสถานการณ์นี้?','ATLS 11 เปลี่ยน guideline จาก ATLS 10 อย่างไรในข้อนี้?','ดู vital signs ทั้งหมด — อะไรบ่งชี้อันตรายมากที่สุดและต้องการ intervention?'];
   alert('💡 คำใบ้: '+h[cur%h.length]);
 }
 function nextStep(){cur++;renderQuiz()}
 
-/* DONE */
+/* ─── DONE ─── */
 function showDone(){
   const pct=Math.round(correct/steps.length*100);
   const grade=pct>=90?'🏆 ยอดเยี่ยม — ผ่านเกณฑ์ ATLS 11':pct>=70?'👍 ดีมาก — ทบทวนจุดที่พลาด':'📚 ต้องทบทวนเพิ่มเติม';
   const gc=pct>=90?'g':pct>=70?'a':'r';
-  const pc={primary:{bg:'var(--red-light)',co:'var(--red)',bd:'var(--red-mid)',la:'Primary'},secondary:{bg:'var(--blue-light)',co:'var(--blue)',bd:'var(--blue-mid)',la:'Secondary'},definitive:{bg:'var(--purple-light)',co:'var(--purple)',bd:'var(--purple-mid)',la:'Definitive'}};
+  const pc={
+    primary:{bg:'var(--red-light)',co:'var(--red)',bd:'var(--red-mid)',la:'Primary'},
+    secondary:{bg:'var(--blue-light)',co:'var(--blue)',bd:'var(--blue-mid)',la:'Secondary'},
+    definitive:{bg:'var(--purple-light)',co:'var(--purple)',bd:'var(--purple-mid)',la:'Definitive'}
+  };
   document.getElementById('quiz-area').innerHTML=`
   <div class="donecard">
-    <div class="donetop"><div class="doneicon">${pct>=90?'🏆':pct>=70?'⭐':'📚'}</div><div class="donegrade">${grade}</div><div class="donesub">Primary → Secondary → Definitive เสร็จสมบูรณ์</div></div>
+    <div class="donetop">
+      <div class="doneicon">${pct>=90?'🏆':pct>=70?'⭐':'📚'}</div>
+      <div class="donegrade">${grade}</div>
+      <div class="donesub">Primary → Secondary → Definitive เสร็จสมบูรณ์ (ATLS 11 · Fact-checked)</div>
+    </div>
     <div class="donebody">
       <div class="donestats">
         <div class="donestat"><div class="dsl">คะแนน</div><div class="dsv ${gc}">${score}/${steps.length*10}</div></div>
@@ -584,7 +826,6 @@ function showDone(){
   updateStats();
 }
 function restart(){cur=0;score=0;correct=0;wrong=0;answered=false;results=[];postDetailOpen=false;renderQuiz()}
-
 buildLib();
 </script>
 </body>
